@@ -769,40 +769,73 @@ NEW COMPACT PAINT HEADER
   width:100%;
   min-height: 150px; /*this makes it much shorter*/
   padding:22px 20px 44px;
-  overflow:hidden;
+  overflow:visible;
 
   background: 
    linear-gradient(
     90deg,
-    var(--paint-blue)0% 16%,
-    var(--paint-coral)16% 33%,
-    var(--paint-pink)33% 56%,
-    var(--paint-yellow)56% 74%,
-    var(--paint-coral)74% 88%,
-    var(--paint-blue)88% 100%
+    #61c7f2 0%,
+    #ea9186 18%,
+    #efb3d1 36%,
+    #d9d471 55%,
+    #efb3d1 71%,
+    #ea9186 87%,
+    #61c7f2 100%
    );
 }
 
 /*soft irregular paint clouds*/
-.paint-band{
-    position: relative;
-    width: 100%;
-    min-height: 150px;
-    padding:22px 20px 44px;
+.paint-band::before{
+    content: "";
+    position: absolute;
+    
+    inset:0;
 
-    overflow:visible;
+    z-index:0;
 
-    background:linear-gradient(
-      90deg,
-      #60c9ef 0%,
-      #e89586 18%,
-      #efb6d2 35%,
-      #ddd575 53%,
-      #efb5d1 69%,
-      #e99082 85%,
-      #60c9ef 100%
+    background: 
+
+    radial-gradient(
+      ellipse at 9% 26%,
+      rgba(234, 145, 134, 0.80)0%,
+      rgba(234, 145, 134, 0.45)35%,
+      transparent 68%
+    ),
+
+    radial-gradient(
+      ellipse at 28% 18%,
+      rgba(239, 179, 209, 0.90)0%,
+      rgba(239, 179, 209, 0.45)38%,
+      transparent 69%
+    ),
+
+    radial-gradient(
+      ellipse at 49% 25%,
+      rgba(217, 212, 113, 0.88)0%,
+      rgba(217, 212, 113, 0.42)36%,
+      transparent 69%
+    ),
+
+    radial-gradient(
+      ellipse at 68% 17%,
+      rgba(239, 179, 209, 0.85)0%,
+      rgba(239, 179, 209, 0.42)35%,
+      transparent 69%
+    ),
+
+    radial-gradient(
+      ellipse at 88% 25%,
+      rgba(234, 145, 134, 0.82)0%,
+      rgba(234, 145, 134, 0.44)36%,
+      transparent 70%
     );
+
+    filter:blur(9px);
+
+    pointer-events: none;  
    }
+
+/*Paint DRIPS*/
 
 /*glossy soft highlight*/
 .paint-band::after{
