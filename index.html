@@ -11,8 +11,13 @@
    1. Base & palette
    ============================================================ */
 :root {
+  --paint-blue:      #61c7f2;
+  --paint-pink:      #efb3d1;
+  --paint-coral:     #ea9186;
+  --paint-yellow:    #d9d471; 
+  --paint-cream:     #f2e6d8; 
   --pink:            #ea8bbc;
-  --apricot:         #fcd7ad;
+  --apricot:         #fcd7ad; 
   --peach:           #F6C28B;
   --cyan:            #5296A5;
   --pale-soft-green: #D8E8D0;
@@ -723,58 +728,189 @@ a:focus, button:focus, input:focus, summary:focus {
     transition: none;
   }
 }
+
+/*
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+NEW COMPACT PAINT HEADER
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+*/
+
+.site-header{
+  position:relative;
+  background:transparent;
+  overflow:visible;
+  isolation:isolate;
+}
+
+/*old header parts are hidden for now*/
+.header-art,
+.wave,
+.tagline,
+.portrait-wrap,
+.name-underline{
+  display:none;
+}
+
+.header-inner{
+  max-width:none;
+  margin:0;
+  padding:0;
+  text-align: center;
+}
+
+.site-name{
+  display:none;
+}
+
+.paint-band{
+  position: relative;
+  width:100%;
+  min-height: 150px; /*this makes it much shorter*/
+  padding:22px 20px 44px;
+  overflow:hidden;
+
+  background: 
+   linear-gradient(
+    90deg,
+    var(--paint-blue)0% 16%,
+    var(--paint-coral)16% 33%,
+    var(--paint-pink)33% 56%,
+    var(--paint-yellow)56% 74%,
+    var(--paint-coral)74% 88%,
+    var(--paint-blue)88% 100%
+   );
+}
+
+/*soft irregular paint clouds*/
+.paint-band::before{
+   content:"";
+   position:absolute;
+   inset:0;
+   background: 
+    radial-gradient(140px 50px at 8% 22%,
+  var(--paint-coral)0 98%, transparent 100%),
+    radial-gradient(180px 56px at 28% 26%,
+  var(--paint-pink)0 98%, transparent 100%),
+    radial-gradient(160px 58px at 48% 20%,
+  var(--paint-yellow)0 98%, transparent 100%),
+    radial-gradient(180px 54px at 66% 24%,
+  var(--paint-pink)0 98%, transparent 100%),
+    radial-gradient(150px 50px at 82% 18%,
+  var(--paint-coral)0 98%, transparent 100%);
+    opacity:0.95;
+    pointer-events:none;
+   }
+
+/*glossy soft highlight*/
+.paint-band::after{
+  content:"";
+  position: absolute;
+  inset:0;
+  background: 
+    linear-gradient(to bottom, rgba(255,255,255,0.18),
+  rgba(255,255,255,0)45%);
+  pointer-events: none;
+}
+
+.drip{
+  position: absolute;
+  bottom:-2px;
+  width:20px;
+  background:var(--drip-color,var(--paint-blue));
+  border-radius:0 0 16px 16px;
+}
+
+.drip::after{
+  content:"";
+  position: absolute;
+  left:50%;
+  bottom:-12px;
+  transform:translateX(-50%);
+  width:26px;
+  height:26px;
+  background:inherit;
+  border-radius:50%;
+}
+
+.drip-1{
+  left:12%;
+  height:34px;
+  --drip-color:var(--paint-blue);
+}
+
+.drip-2{
+  left:30%;
+  height:56px;
+  --drip-color:var(--paint-blue);
+}
+
+.drip-3{
+  left:50%;
+  height:80px;
+  --drip-color:var(--paint-blue);
+}
+
+.drip-4{
+  left:67%;
+  height:42px;
+  --drip-color:var(--paint-yellow);
+}
+
+.drip-5{
+  left:85%;
+  height:60px;
+  --drip-color:var(--paint-coral);
+}
+
+.header-logo{
+  position:relative;
+  z-index:2;
+  display:block;
+  width:min(620px, 82vw);
+  height:auto;
+  margin: 0 auto;
+  filter:drop-shadow(0 6px 14px rgba(49, 66, 74, 0.16));
+}
+
+/*small screens*/
+
+@media(max-width: 700px){
+  .paint-band{
+    min-height: 110px;
+    padding:16px 12px 34px;
+  }
+
+  .header-logo{
+    width:88vw;
+  }
+
+  .drip-3{height:58px;}
+  .drip-5{height:44px;}
+}
+
 </style>
 </head>
 <body>
 
 <!-- ============================ HEADER ============================ -->
 <header class="site-header">
-  <div class="header-art" aria-hidden="true">
-    <span class="blob blob-1"></span>
-    <span class="blob blob-2"></span>
-    <span class="blob blob-3"></span>
-    <span class="blob blob-4"></span>
-    <span class="blob blob-5"></span>
-    <span class="blob blob-6"></span>
-  </div>
-
   <div class="header-inner">
-    <h1 class="site-name">Julie Sinclair</h1>
+     <div class="paint-band">
+      <span class="drip drip-1" aria-hidden="true"></span>
+      <span class="drip drip-2" aria-hidden="true"></span>
+      <span class="drip drip-3" aria-hidden="true"></span>
+      <span class="drip drip-4" aria-hidden="true"></span>
+      <span class="drop drip-5" aria-hidden="true"></span>
 
-    <svg class="name-underline" viewBox="0 0 220 14" aria-hidden="true" focusable="false">
-      <path d="M4 9 C 40 2, 70 12, 110 7 S 180 3, 216 8"
-            fill="none" stroke="#ea8bbc" stroke-width="3.5" stroke-linecap="round"/>
-    </svg>
-
-    <p class="tagline">paintings &amp; quiet things</p>
-
-    <div class="portrait-wrap">
-      <div class="portrait" role="img"
-           aria-label="Soft illustration of Julie Sinclair: blonde hair, closed eyes, a shy smile, wearing a pale green blouse">
-        <span class="portrait-halo"></span>
-        <span class="hair-back"></span>
-        <span class="neck"></span>
-        <span class="shoulders"></span>
-        <span class="face"></span>
-        <span class="bangs-l"></span>
-        <span class="bangs-r"></span>
-        <span class="hair-l"></span>
-        <span class="hair-r"></span>
-        <span class="wisp"></span>
-        <span class="eye eye-l"></span>
-        <span class="eye eye-r"></span>
-        <span class="blush blush-l"></span>
-        <span class="blush blush-r"></span>
-        <span class="lips"></span>
-        <span class="flower"></span>
-      </div>
-    </div>
+      <img
+       class="header-logo"
+       src="images/julie-sinclair-logo.svg"
+       alt="Julie Sinclair logo with a cat"
+       >
   </div>
-
-  <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-    <path d="M0,40 C120,68 240,10 360,30 C480,50 600,10 720,25 C840,40 960,15 1080,30 C1200,45 1320,20 1440,35 L1440,70 L0,70 Z"
-          fill="#fffdf8"/>
-  </svg>
+  </div>
 </header>
 
 <main>
