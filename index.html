@@ -1,735 +1,988 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light">
-<title>Julie Sinclair · paintings &amp; quiet things</title>
-<meta name="description" content="Portfolio of Julie Sinclair, painter of soft and quiet things.">
-<style>
-/* ============================================================
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Julie Sinclair · paintings &amp; quiet things</title>
+    <meta
+      name="description"
+      content="Portfolio of Julie Sinclair, painter of soft and quiet things."
+    />
+    <style>
+      /* ============================================================
    1. Base & palette
    ============================================================ */
-:root {
-  --paint-blue:      #61c7f2;
-  --paint-pink:      #efb3d1;
-  --paint-coral:     #ea9186;
-  --paint-yellow:    #d9d471; 
-  --paint-cream:     #f2e6d8; 
-  --pink:            #ea8bbc;
-  --apricot:         #fcd7ad; 
-  --peach:           #F6C28B;
-  --cyan:            #5296A5;
-  --pale-soft-green: #D8E8D0;
-  --blue:            #82DDF0;
+      :root {
+        --paint-blue: #61c7f2;
+        --paint-pink: #efb3d1;
+        --paint-coral: #ea9186;
+        --paint-yellow: #d9d471;
+        --paint-cream: #f2e6d8;
+        --pink: #ea8bbc;
+        --apricot: #fcd7ad;
+        --peach: #f6c28b;
+        --cyan: #5296a5;
+        --pale-soft-green: #d8e8d0;
+        --blue: #82ddf0;
 
-  --paper:  #fffdf8;   /* warm page background        */
-  --ink:    #31424a;   /* deep slate-teal text/ink    */
-  --line:   #465961;   /* softer ink for facial lines */
-  --soft-rose: #fceef4;/* pale pink section wash      */
+        --paper: #fffdf8; /* warm page background        */
+        --ink: #31424a; /* deep slate-teal text/ink    */
+        --line: #465961; /* softer ink for facial lines */
+        --soft-rose: #fceef4; /* pale pink section wash      */
 
-  --name-font: "Segoe Script", "Snell Roundhand", "Bradley Hand",
-               "Brush Script MT", cursive;
-  --body-font: "Trebuchet MS", Verdana, Arial, sans-serif;
-}
+        --name-font:
+          "Segoe Script", "Snell Roundhand", "Bradley Hand", "Brush Script MT",
+          cursive;
+        --body-font: "Trebuchet MS", Verdana, Arial, sans-serif;
+      }
 
-* { box-sizing: border-box; }
+      * {
+        box-sizing: border-box;
+      }
 
-html, body { margin: 0; padding: 0; }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
 
-body {
-  font-family: var(--body-font);
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--ink);
-  background: var(--paper);
-  -webkit-text-size-adjust: 100%;
-}
+      body {
+        font-family: var(--body-font);
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--ink);
+        background: var(--paper);
+        -webkit-text-size-adjust: 100%;
+      }
 
-::selection { background: var(--peach); color: var(--ink); }
+      ::selection {
+        background: var(--peach);
+        color: var(--ink);
+      }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-  border: 0;
-}
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+      }
 
-/* Visible keyboard / TV focus everywhere */
-a:focus, button:focus, input:focus, summary:focus {
-  outline: 3px solid var(--cyan);
-  outline-offset: 3px;
-}
+      /* Visible keyboard / TV focus everywhere */
+      a:focus,
+      button:focus,
+      input:focus,
+      summary:focus {
+        outline: 3px solid var(--cyan);
+        outline-offset: 3px;
+      }
 
-/* ============================================================
+      /* ============================================================
    2. Header — apricot sky with ink blooms
    ============================================================ */
-.site-header {
-  position: relative;
-  background: var(--apricot);
-  overflow: hidden;
-  isolation: isolate;   /* keep ink-blend inside the header */
-}
+      .site-header {
+        position: relative;
+        background: var(--apricot);
+        overflow: hidden;
+        isolation: isolate; /* keep ink-blend inside the header */
+      }
 
-.header-art {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 0;
-  pointer-events: none;
-}
+      .header-art {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        pointer-events: none;
+      }
 
-.blob {
-  position: absolute;
-  border-radius: 58% 42% 55% 45% / 50% 60% 40% 50%;
-  filter: blur(20px);
-  mix-blend-mode: multiply;
-}
-.blob-1 { width: 250px; height: 250px; left: -70px;  top: 60px;  background: var(--blue); opacity: 0.55; }
-.blob-2 { width: 210px; height: 210px; right: -50px; top: -40px; background: var(--pink); opacity: 0.50; }
-.blob-3 { width: 150px; height: 150px; left: 10%;    bottom: 70px; background: var(--cyan); opacity: 0.30; }
-.blob-4 { width: 120px; height: 120px; right: 16%;   bottom: 30px; background: var(--blue); opacity: 0.45; }
-.blob-5 { width: 110px; height: 110px; left: 6%;     top: 26%;   background: var(--pink); opacity: 0.45; }
-.blob-6 { width: 30px;  height: 30px;  right: 28%;   top: 22%;   background: var(--blue); opacity: 0.50; filter: blur(2px); }
+      .blob {
+        position: absolute;
+        border-radius: 58% 42% 55% 45% / 50% 60% 40% 50%;
+        filter: blur(20px);
+        mix-blend-mode: multiply;
+      }
+      .blob-1 {
+        width: 250px;
+        height: 250px;
+        left: -70px;
+        top: 60px;
+        background: var(--blue);
+        opacity: 0.55;
+      }
+      .blob-2 {
+        width: 210px;
+        height: 210px;
+        right: -50px;
+        top: -40px;
+        background: var(--pink);
+        opacity: 0.5;
+      }
+      .blob-3 {
+        width: 150px;
+        height: 150px;
+        left: 10%;
+        bottom: 70px;
+        background: var(--cyan);
+        opacity: 0.3;
+      }
+      .blob-4 {
+        width: 120px;
+        height: 120px;
+        right: 16%;
+        bottom: 30px;
+        background: var(--blue);
+        opacity: 0.45;
+      }
+      .blob-5 {
+        width: 110px;
+        height: 110px;
+        left: 6%;
+        top: 26%;
+        background: var(--pink);
+        opacity: 0.45;
+      }
+      .blob-6 {
+        width: 30px;
+        height: 30px;
+        right: 28%;
+        top: 22%;
+        background: var(--blue);
+        opacity: 0.5;
+        filter: blur(2px);
+      }
 
-.blob-1, .blob-4 { animation: blobDrift 34s ease-in-out infinite alternate; }
-.blob-2, .blob-5 { animation: blobDriftAlt 42s ease-in-out infinite alternate; }
-.blob-3          { animation: blobDrift 50s ease-in-out infinite alternate; }
+      .blob-1,
+      .blob-4 {
+        animation: blobDrift 34s ease-in-out infinite alternate;
+      }
+      .blob-2,
+      .blob-5 {
+        animation: blobDriftAlt 42s ease-in-out infinite alternate;
+      }
+      .blob-3 {
+        animation: blobDrift 50s ease-in-out infinite alternate;
+      }
 
-@keyframes blobDrift {
-  from { transform: translate(0, 0)        scale(1);    }
-  to   { transform: translate(18px, -14px) scale(1.07); }
-}
-@keyframes blobDriftAlt {
-  from { transform: translate(0, 0)         scale(1.05); }
-  to   { transform: translate(-16px, 12px)  scale(0.97); }
-}
+      @keyframes blobDrift {
+        from {
+          transform: translate(0, 0) scale(1);
+        }
+        to {
+          transform: translate(18px, -14px) scale(1.07);
+        }
+      }
+      @keyframes blobDriftAlt {
+        from {
+          transform: translate(0, 0) scale(1.05);
+        }
+        to {
+          transform: translate(-16px, 12px) scale(0.97);
+        }
+      }
 
-.header-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 56px 20px 130px;
-  text-align: center;
-}
+      .header-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 56px 20px 130px;
+        text-align: center;
+      }
 
-.site-name {
-  margin: 0;
-  font-family: var(--name-font);
-  font-weight: 700;
-  font-size: clamp(2.7rem, 10vw, 4.4rem);
-  line-height: 1.1;
-  color: var(--ink);
-}
+      .site-name {
+        margin: 0;
+        font-family: var(--name-font);
+        font-weight: 700;
+        font-size: clamp(2.7rem, 10vw, 4.4rem);
+        line-height: 1.1;
+        color: var(--ink);
+      }
 
-.name-underline {
-  display: block;
-  width: min(260px, 62%);
-  height: auto;
-  margin: 4px auto 0;
-}
+      .name-underline {
+        display: block;
+        width: min(260px, 62%);
+        height: auto;
+        margin: 4px auto 0;
+      }
 
-.tagline {
-  margin: 14px 0 0;
-  font-size: 0.8rem;
-  letter-spacing: 0.22em;
-  color: rgba(49, 66, 74, 0.72);
-}
+      .tagline {
+        margin: 14px 0 0;
+        font-size: 0.8rem;
+        letter-spacing: 0.22em;
+        color: rgba(49, 66, 74, 0.72);
+      }
 
-.portrait-wrap {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
+      .portrait-wrap {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+      }
 
-/* ============================================================
+      /* ============================================================
    3. The shy portrait — pure CSS illustration
    ============================================================ */
-.portrait {
-  position: relative;
-  width: 220px;
-  height: 250px;
-  transform: rotate(-3deg);
-}
-.portrait span { position: absolute; display: block; }
+      .portrait {
+        position: relative;
+        width: 220px;
+        height: 250px;
+        transform: rotate(-3deg);
+      }
+      .portrait span {
+        position: absolute;
+        display: block;
+      }
 
-.portrait-halo {
-  z-index: 0;
-  left: -35px; top: -45px;
-  width: 290px; height: 310px;
-  background: var(--paper);
-  opacity: 0.85;
-  border-radius: 50%;
-  filter: blur(18px);
-}
+      .portrait-halo {
+        z-index: 0;
+        left: -35px;
+        top: -45px;
+        width: 290px;
+        height: 310px;
+        background: var(--paper);
+        opacity: 0.85;
+        border-radius: 50%;
+        filter: blur(18px);
+      }
 
-.hair-back {
-  z-index: 1;
-  left: 35px; top: 6px;
-  width: 150px; height: 204px;
-  background: #f4cf9a;
-  border-radius: 46% 54% 48% 52% / 55% 58% 42% 45%;
-}
-.hair-l {
-  z-index: 4;
-  left: 26px; top: 66px;
-  width: 46px; height: 152px;
-  background: #efc287;
-  border-radius: 50% 50% 45% 55% / 40% 40% 60% 60%;
-}
-.hair-r {
-  z-index: 4;
-  left: 148px; top: 66px;
-  width: 46px; height: 152px;
-  background: #efc287;
-  border-radius: 50% 50% 55% 45% / 40% 40% 60% 60%;
-}
+      .hair-back {
+        z-index: 1;
+        left: 35px;
+        top: 6px;
+        width: 150px;
+        height: 204px;
+        background: #f4cf9a;
+        border-radius: 46% 54% 48% 52% / 55% 58% 42% 45%;
+      }
+      .hair-l {
+        z-index: 4;
+        left: 26px;
+        top: 66px;
+        width: 46px;
+        height: 152px;
+        background: #efc287;
+        border-radius: 50% 50% 45% 55% / 40% 40% 60% 60%;
+      }
+      .hair-r {
+        z-index: 4;
+        left: 148px;
+        top: 66px;
+        width: 46px;
+        height: 152px;
+        background: #efc287;
+        border-radius: 50% 50% 55% 45% / 40% 40% 60% 60%;
+      }
 
-.neck {
-  z-index: 2;
-  left: 94px; top: 148px;
-  width: 32px; height: 34px;
-  background: #f6e2d4;
-  border-radius: 0 0 30% 30% / 0 0 40% 40%;
-}
-.shoulders {
-  z-index: 2;
-  left: 10px; bottom: 0;
-  width: 200px; height: 78px;
-  background: var(--pale-soft-green);
-  border-radius: 55% 45% 0 0 / 100% 100% 0 0;
-}
+      .neck {
+        z-index: 2;
+        left: 94px;
+        top: 148px;
+        width: 32px;
+        height: 34px;
+        background: #f6e2d4;
+        border-radius: 0 0 30% 30% / 0 0 40% 40%;
+      }
+      .shoulders {
+        z-index: 2;
+        left: 10px;
+        bottom: 0;
+        width: 200px;
+        height: 78px;
+        background: var(--pale-soft-green);
+        border-radius: 55% 45% 0 0 / 100% 100% 0 0;
+      }
 
-.face {
-  z-index: 3;
-  left: 60px; top: 34px;
-  width: 100px; height: 128px;
-  background: #fdeee4;
-  border-radius: 50% 50% 48% 52% / 58% 58% 44% 44%;
-}
+      .face {
+        z-index: 3;
+        left: 60px;
+        top: 34px;
+        width: 100px;
+        height: 128px;
+        background: #fdeee4;
+        border-radius: 50% 50% 48% 52% / 58% 58% 44% 44%;
+      }
 
-.bangs-l, .bangs-r { z-index: 4; background: #f7d6a4; }
-.bangs-l {
-  left: 52px; top: 20px;
-  width: 62px; height: 66px;
-  border-radius: 80% 20% 60% 40% / 90% 60% 40% 10%;
-  transform: rotate(6deg);
-}
-.bangs-r {
-  left: 106px; top: 20px;
-  width: 62px; height: 66px;
-  border-radius: 20% 80% 40% 60% / 60% 90% 10% 40%;
-  transform: rotate(-6deg);
-}
-.wisp {
-  z-index: 5;
-  left: 54px; top: 86px;
-  width: 4px; height: 22px;
-  background: #f4cf9a;
-  border-radius: 3px;
-  transform: rotate(16deg);
-}
+      .bangs-l,
+      .bangs-r {
+        z-index: 4;
+        background: #f7d6a4;
+      }
+      .bangs-l {
+        left: 52px;
+        top: 20px;
+        width: 62px;
+        height: 66px;
+        border-radius: 80% 20% 60% 40% / 90% 60% 40% 10%;
+        transform: rotate(6deg);
+      }
+      .bangs-r {
+        left: 106px;
+        top: 20px;
+        width: 62px;
+        height: 66px;
+        border-radius: 20% 80% 40% 60% / 60% 90% 10% 40%;
+        transform: rotate(-6deg);
+      }
+      .wisp {
+        z-index: 5;
+        left: 54px;
+        top: 86px;
+        width: 4px;
+        height: 22px;
+        background: #f4cf9a;
+        border-radius: 3px;
+        transform: rotate(16deg);
+      }
 
-.eye {
-  z-index: 5;
-  width: 26px; height: 16px;
-  border: 3px solid transparent;
-  border-bottom-color: var(--line);
-  border-radius: 50%;
-}
-.eye-l { left: 76px;  top: 96px; }
-.eye-r { left: 118px; top: 96px; }
-.eye::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  width: 3px; height: 8px;
-  background: var(--line);
-  border-radius: 2px;
-}
-.eye-l::after { left: -4px;  transform: rotate(-36deg); }
-.eye-r::after { right: -4px; transform: rotate(36deg); }
+      .eye {
+        z-index: 5;
+        width: 26px;
+        height: 16px;
+        border: 3px solid transparent;
+        border-bottom-color: var(--line);
+        border-radius: 50%;
+      }
+      .eye-l {
+        left: 76px;
+        top: 96px;
+      }
+      .eye-r {
+        left: 118px;
+        top: 96px;
+      }
+      .eye::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        width: 3px;
+        height: 8px;
+        background: var(--line);
+        border-radius: 2px;
+      }
+      .eye-l::after {
+        left: -4px;
+        transform: rotate(-36deg);
+      }
+      .eye-r::after {
+        right: -4px;
+        transform: rotate(36deg);
+      }
 
-.blush {
-  z-index: 5;
-  width: 18px; height: 9px;
-  background: var(--pink);
-  opacity: 0.4;
-  border-radius: 50%;
-  filter: blur(1px);
-}
-.blush-l { left: 70px;  top: 116px; }
-.blush-r { left: 132px; top: 116px; }
+      .blush {
+        z-index: 5;
+        width: 18px;
+        height: 9px;
+        background: var(--pink);
+        opacity: 0.4;
+        border-radius: 50%;
+        filter: blur(1px);
+      }
+      .blush-l {
+        left: 70px;
+        top: 116px;
+      }
+      .blush-r {
+        left: 132px;
+        top: 116px;
+      }
 
-.lips {
-  z-index: 5;
-  left: 101px; top: 134px;
-  width: 18px; height: 8px;
-  background: var(--pink);
-  opacity: 0.85;
-  border-radius: 40% 40% 60% 60% / 60% 60% 80% 80%;
-  transform: rotate(-3deg);
-}
+      .lips {
+        z-index: 5;
+        left: 101px;
+        top: 134px;
+        width: 18px;
+        height: 8px;
+        background: var(--pink);
+        opacity: 0.85;
+        border-radius: 40% 40% 60% 60% / 60% 60% 80% 80%;
+        transform: rotate(-3deg);
+      }
 
-.flower {
-  z-index: 6;
-  left: 146px; top: 38px;
-  width: 9px; height: 9px;
-  background: var(--pink);
-  border-radius: 50%;
-  box-shadow:
-     0  -9px 0 var(--pink),
-     8px -3px 0 var(--pink),
-     6px  7px 0 var(--pink),
-    -6px  7px 0 var(--pink),
-    -8px -3px 0 var(--pink);
-}
-.flower::after {
-  content: "";
-  position: absolute;
-  left: 1.5px; top: 1.5px;
-  width: 6px; height: 6px;
-  background: var(--apricot);
-  border-radius: 50%;
-}
+      .flower {
+        z-index: 6;
+        left: 146px;
+        top: 38px;
+        width: 9px;
+        height: 9px;
+        background: var(--pink);
+        border-radius: 50%;
+        box-shadow:
+          0 -9px 0 var(--pink),
+          8px -3px 0 var(--pink),
+          6px 7px 0 var(--pink),
+          -6px 7px 0 var(--pink),
+          -8px -3px 0 var(--pink);
+      }
+      .flower::after {
+        content: "";
+        position: absolute;
+        left: 1.5px;
+        top: 1.5px;
+        width: 6px;
+        height: 6px;
+        background: var(--apricot);
+        border-radius: 50%;
+      }
 
-.wave {
-  position: absolute;
-  z-index: 1;
-  left: 0; right: 0; bottom: -1px;
-  width: 100%;
-  height: 70px;
-  display: block;
-  pointer-events: none;
-}
+      .wave {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        width: 100%;
+        height: 70px;
+        display: block;
+        pointer-events: none;
+      }
 
-/* ============================================================
+      /* ============================================================
    4. Quiet things — paintings that unfold when opened
       (details/summary keeps this fully HTML/CSS, no script)
    ============================================================ */
-.quiet-things {
-  padding: 64px 20px 72px;
-  text-align: center;
-}
+      .quiet-things {
+        padding: 64px 20px 72px;
+        text-align: center;
+      }
 
-.section-label {
-  display: inline-block;
-  margin: 0;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-.section-label::before {
-  content: "";
-  display: block;
-  width: 22px; height: 4px;
-  margin: 0 auto 10px;
-  border-radius: 2px;
-  background: var(--pink);
-}
-.section-note {
-  margin: 8px auto 34px;
-  max-width: 34em;
-  font-size: 0.9rem;
-  color: rgba(49, 66, 74, 0.75);
-}
+      .section-label {
+        display: inline-block;
+        margin: 0;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ink);
+      }
+      .section-label::before {
+        content: "";
+        display: block;
+        width: 22px;
+        height: 4px;
+        margin: 0 auto 10px;
+        border-radius: 2px;
+        background: var(--pink);
+      }
+      .section-note {
+        margin: 8px auto 34px;
+        max-width: 34em;
+        font-size: 0.9rem;
+        color: rgba(49, 66, 74, 0.75);
+      }
 
-.cards {
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-  max-width: 780px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 22px;
-}
-.cards li { display: flex; }
+      .cards {
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+        max-width: 780px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+      .cards li {
+        display: flex;
+      }
 
-/* A closed card shows only the painting and its title */
-.card {
-  position: relative;
-  flex: 1;
-  background: #ffffff;
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(49, 66, 74, 0.10);
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
-}
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 26px rgba(49, 66, 74, 0.15);
-}
-.card[open] {
-  transform: none;
-  box-shadow: 0 16px 34px rgba(49, 66, 74, 0.18);
-}
+      /* A closed card shows only the painting and its title */
+      .card {
+        position: relative;
+        flex: 1;
+        background: #ffffff;
+        border-radius: 14px;
+        box-shadow: 0 6px 18px rgba(49, 66, 74, 0.1);
+        transition:
+          box-shadow 0.25s ease,
+          transform 0.25s ease;
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 26px rgba(49, 66, 74, 0.15);
+      }
+      .card[open] {
+        transform: none;
+        box-shadow: 0 16px 34px rgba(49, 66, 74, 0.18);
+      }
 
-.card summary {
-  display: block;            /* removes the disclosure triangle */
-  list-style: none;
-  cursor: pointer;
-  padding: 18px 18px 20px;
-  border-radius: 14px;
-  text-align: center;
-}
-.card summary::-webkit-details-marker { display: none; }
-.card summary:focus { outline-offset: -3px; }
-.card:hover .card-title {
-  text-decoration: underline;
-  text-decoration-color: var(--pink);
-  text-underline-offset: 5px;
-}
+      .card summary {
+        display: block; /* removes the disclosure triangle */
+        list-style: none;
+        cursor: pointer;
+        padding: 18px 18px 20px;
+        border-radius: 14px;
+        text-align: center;
+      }
+      .card summary::-webkit-details-marker {
+        display: none;
+      }
+      .card summary:focus {
+        outline-offset: -3px;
+      }
+      .card:hover .card-title {
+        text-decoration: underline;
+        text-decoration-color: var(--pink);
+        text-underline-offset: 5px;
+      }
 
-/* Tiny round "+" that turns into an "×" once the card is open */
-.hint {
-  position: absolute;
-  top: 14px; right: 14px;
-  width: 26px; height: 26px;
-  background: var(--soft-rose);
-  border-radius: 50%;
-  color: var(--ink);
-  font-size: 17px;
-  line-height: 26px;
-  font-weight: 700;
-  transition: transform 0.25s ease, background 0.25s ease;
-}
-.hint::before { content: "+"; }
-.card[open] .hint {
-  transform: rotate(45deg);
-  background: var(--peach);
-}
+      /* Tiny round "+" that turns into an "×" once the card is open */
+      .hint {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 26px;
+        height: 26px;
+        background: var(--soft-rose);
+        border-radius: 50%;
+        color: var(--ink);
+        font-size: 17px;
+        line-height: 26px;
+        font-weight: 700;
+        transition:
+          transform 0.25s ease,
+          background 0.25s ease;
+      }
+      .hint::before {
+        content: "+";
+      }
+      .card[open] .hint {
+        transform: rotate(45deg);
+        background: var(--peach);
+      }
 
-.artwork { display: block; }
+      .artwork {
+        display: block;
+      }
 
-.frame {
-  display: block;
-  padding: 10px;
-  background: var(--peach);
-  border-radius: 6px;
-  box-shadow:
-    inset 0 0 0 1px rgba(122, 79, 35, 0.35),
-    inset 0 0 0 2px rgba(255, 255, 255, 0.35),
-    0 8px 18px rgba(49, 66, 74, 0.14);
-}
-.mat {
-  display: block;
-  padding: 12px;
-  background: var(--paper);
-  box-shadow: inset 0 1px 4px rgba(49, 66, 74, 0.18);
-}
+      .frame {
+        display: block;
+        padding: 10px;
+        background: var(--peach);
+        border-radius: 6px;
+        box-shadow:
+          inset 0 0 0 1px rgba(122, 79, 35, 0.35),
+          inset 0 0 0 2px rgba(255, 255, 255, 0.35),
+          0 8px 18px rgba(49, 66, 74, 0.14);
+      }
+      .mat {
+        display: block;
+        padding: 12px;
+        background: var(--paper);
+        box-shadow: inset 0 1px 4px rgba(49, 66, 74, 0.18);
+      }
 
-.painting {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 150px;
-  border-radius: 3px;
-  overflow: hidden;
-  transition: height 0.3s ease;   /* the painting itself grows when open */
-}
-.card[open] .painting { height: 200px; }
+      .painting {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 150px;
+        border-radius: 3px;
+        overflow: hidden;
+        transition: height 0.3s ease; /* the painting itself grows when open */
+      }
+      .card[open] .painting {
+        height: 200px;
+      }
 
-.card-title {
-  display: block;
-  margin-top: 12px;
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--ink);
-}
+      .card-title {
+        display: block;
+        margin-top: 12px;
+        font-weight: 700;
+        font-size: 1rem;
+        color: var(--ink);
+      }
 
-/* Everything hidden until the card is opened */
-.card-more {
-  padding: 0 24px 26px;
-  text-align: center;
-  animation: cardUnfold 0.35s ease both;
-}
-@keyframes cardUnfold {
-  from { opacity: 0; transform: translateY(-8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+      /* Everything hidden until the card is opened */
+      .card-more {
+        padding: 0 24px 26px;
+        text-align: center;
+        animation: cardUnfold 0.35s ease both;
+      }
+      @keyframes cardUnfold {
+        from {
+          opacity: 0;
+          transform: translateY(-8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-.card-desc {
-  margin: 2px 0 6px;
-  font-size: 0.9rem;
-  line-height: 1.65;
-  color: rgba(49, 66, 74, 0.85);
-}
-.card-medium {
-  margin: 0 0 14px;
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-  color: rgba(49, 66, 74, 0.65);
-}
+      .card-desc {
+        margin: 2px 0 6px;
+        font-size: 0.9rem;
+        line-height: 1.65;
+        color: rgba(49, 66, 74, 0.85);
+      }
+      .card-medium {
+        margin: 0 0 14px;
+        font-size: 0.78rem;
+        letter-spacing: 0.04em;
+        color: rgba(49, 66, 74, 0.65);
+      }
 
-/* The price is the last thing to appear — and it is the link out */
-.price-link {
-  display: inline-block;
-  padding: 11px 26px;
-  border-radius: 999px;
-  background: var(--pink);
-  color: var(--ink);
-  font-weight: 700;
-  font-size: 0.95rem;
-  text-decoration: none;
-  box-shadow: 0 5px 14px rgba(49, 66, 74, 0.16);
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-.price-link:hover {
-  background: #e578ae;
-  transform: translateY(-2px);
-}
-.price-link:active { transform: none; }
-.price-link .price-amount { font-size: 1.05rem; }
+      /* The price is the last thing to appear — and it is the link out */
+      .price-link {
+        display: inline-block;
+        padding: 11px 26px;
+        border-radius: 999px;
+        background: var(--pink);
+        color: var(--ink);
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        box-shadow: 0 5px 14px rgba(49, 66, 74, 0.16);
+        transition:
+          background 0.2s ease,
+          transform 0.2s ease;
+      }
+      .price-link:hover {
+        background: #e578ae;
+        transform: translateY(-2px);
+      }
+      .price-link:active {
+        transform: none;
+      }
+      .price-link .price-amount {
+        font-size: 1.05rem;
+      }
 
-/* --- the four little paintings ------------------------------ */
+      /* --- the four little paintings ------------------------------ */
 
-.p-lake {
-  background:
-    radial-gradient(circle at 68% 24%, var(--apricot) 0 12%, rgba(252, 215, 173, 0) 13%),
-    linear-gradient(to bottom, var(--apricot) 0 40%, var(--blue) 40% 64%, var(--cyan) 64% 100%);
-}
-.p-lake::after {
-  content: "";
-  position: absolute;
-  left: 58%; top: 45%;
-  width: 26%; height: 9%;
-  background: rgba(234, 139, 188, 0.55);
-  border-radius: 50%;
-  filter: blur(3px);
-}
+      .p-lake {
+        background:
+          radial-gradient(
+            circle at 68% 24%,
+            var(--apricot) 0 12%,
+            rgba(252, 215, 173, 0) 13%
+          ),
+          linear-gradient(
+            to bottom,
+            var(--apricot) 0 40%,
+            var(--blue) 40% 64%,
+            var(--cyan) 64% 100%
+          );
+      }
+      .p-lake::after {
+        content: "";
+        position: absolute;
+        left: 58%;
+        top: 45%;
+        width: 26%;
+        height: 9%;
+        background: rgba(234, 139, 188, 0.55);
+        border-radius: 50%;
+        filter: blur(3px);
+      }
 
-.p-birch {
-  background:
-    radial-gradient(60% 34% at 24% 6%, var(--pale-soft-green) 0 60%, rgba(216, 232, 208, 0) 61%),
-    radial-gradient(55% 30% at 78% 4%, var(--pale-soft-green) 0 60%, rgba(216, 232, 208, 0) 61%),
-    radial-gradient(40% 22% at 55% 12%, var(--peach) 0 60%, rgba(246, 194, 139, 0) 61%),
-    #fdf6ea;
-}
-.p-birch i {
-  position: absolute;
-  top: -6px;
-  width: 5px;
-  height: calc(100% + 12px);
-  background: var(--line);
-  border-radius: 3px;
-}
-.p-birch i:nth-child(1) { left: 20%; transform: rotate(2deg);    }
-.p-birch i:nth-child(2) { left: 41%; transform: rotate(-1.5deg); }
-.p-birch i:nth-child(3) { left: 62%; transform: rotate(1deg);    }
-.p-birch i:nth-child(4) { left: 82%; transform: rotate(-2.5deg); }
+      .p-birch {
+        background:
+          radial-gradient(
+            60% 34% at 24% 6%,
+            var(--pale-soft-green) 0 60%,
+            rgba(216, 232, 208, 0) 61%
+          ),
+          radial-gradient(
+            55% 30% at 78% 4%,
+            var(--pale-soft-green) 0 60%,
+            rgba(216, 232, 208, 0) 61%
+          ),
+          radial-gradient(
+            40% 22% at 55% 12%,
+            var(--peach) 0 60%,
+            rgba(246, 194, 139, 0) 61%
+          ),
+          #fdf6ea;
+      }
+      .p-birch i {
+        position: absolute;
+        top: -6px;
+        width: 5px;
+        height: calc(100% + 12px);
+        background: var(--line);
+        border-radius: 3px;
+      }
+      .p-birch i:nth-child(1) {
+        left: 20%;
+        transform: rotate(2deg);
+      }
+      .p-birch i:nth-child(2) {
+        left: 41%;
+        transform: rotate(-1.5deg);
+      }
+      .p-birch i:nth-child(3) {
+        left: 62%;
+        transform: rotate(1deg);
+      }
+      .p-birch i:nth-child(4) {
+        left: 82%;
+        transform: rotate(-2.5deg);
+      }
 
-.p-peony {
-  background:
-    radial-gradient(circle at 32% 42%, var(--pink) 0 12%, rgba(234, 139, 188, 0.4) 13% 21%, rgba(234, 139, 188, 0) 22%),
-    radial-gradient(circle at 66% 60%, var(--pink) 0 9%,  rgba(234, 139, 188, 0.35) 10% 16%, rgba(234, 139, 188, 0) 17%),
-    radial-gradient(26% 16% at 58% 34%, rgba(216, 232, 208, 0.9) 0 60%, rgba(216, 232, 208, 0) 61%),
-    #fffdf6;
-}
-.p-peony::after {
-  content: "";
-  position: absolute;
-  left: 33%; top: 50%;
-  width: 3px; height: 38%;
-  background: #c9dcc1;
-  border-radius: 2px;
-  transform: rotate(5deg);
-}
-.p-peony::before {
-  content: "";
-  position: absolute;
-  left: 38%; top: 72%;
-  width: 34px; height: 14px;
-  background: var(--pale-soft-green);
-  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-  transform: rotate(-18deg);
-}
+      .p-peony {
+        background:
+          radial-gradient(
+            circle at 32% 42%,
+            var(--pink) 0 12%,
+            rgba(234, 139, 188, 0.4) 13% 21%,
+            rgba(234, 139, 188, 0) 22%
+          ),
+          radial-gradient(
+            circle at 66% 60%,
+            var(--pink) 0 9%,
+            rgba(234, 139, 188, 0.35) 10% 16%,
+            rgba(234, 139, 188, 0) 17%
+          ),
+          radial-gradient(
+            26% 16% at 58% 34%,
+            rgba(216, 232, 208, 0.9) 0 60%,
+            rgba(216, 232, 208, 0) 61%
+          ),
+          #fffdf6;
+      }
+      .p-peony::after {
+        content: "";
+        position: absolute;
+        left: 33%;
+        top: 50%;
+        width: 3px;
+        height: 38%;
+        background: #c9dcc1;
+        border-radius: 2px;
+        transform: rotate(5deg);
+      }
+      .p-peony::before {
+        content: "";
+        position: absolute;
+        left: 38%;
+        top: 72%;
+        width: 34px;
+        height: 14px;
+        background: var(--pale-soft-green);
+        border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        transform: rotate(-18deg);
+      }
 
-.p-hour {
-  background: linear-gradient(to bottom, #3f6570 0 58%, var(--cyan) 58% 100%);
-}
-.p-hour::before {
-  content: "";
-  position: absolute;
-  left: 66%; top: 16%;
-  width: 16px; height: 16px;
-  background: var(--blue);
-  border-radius: 50%;
-  box-shadow: 0 0 0 6px rgba(130, 221, 240, 0.25);
-}
-.p-hour::after {
-  content: "";
-  position: absolute;
-  left: 30%; top: 61%;
-  width: 40%; height: 3px;
-  background: rgba(130, 221, 240, 0.5);
-  border-radius: 2px;
-}
+      .p-hour {
+        background: linear-gradient(
+          to bottom,
+          #3f6570 0 58%,
+          var(--cyan) 58% 100%
+        );
+      }
+      .p-hour::before {
+        content: "";
+        position: absolute;
+        left: 66%;
+        top: 16%;
+        width: 16px;
+        height: 16px;
+        background: var(--blue);
+        border-radius: 50%;
+        box-shadow: 0 0 0 6px rgba(130, 221, 240, 0.25);
+      }
+      .p-hour::after {
+        content: "";
+        position: absolute;
+        left: 30%;
+        top: 61%;
+        width: 40%;
+        height: 3px;
+        background: rgba(130, 221, 240, 0.5);
+        border-radius: 2px;
+      }
 
-/* ============================================================
+      /* ============================================================
    5. About Julie
    ============================================================ */
-.about {
-  background: #f2f7ee;   /* whisper of green */
-  padding: 70px 20px 78px;
-  text-align: center;
-}
+      .about {
+        background: #f2f7ee; /* whisper of green */
+        padding: 70px 20px 78px;
+        text-align: center;
+      }
 
-.about-inner {
-  max-width: 860px;
-  margin: 34px auto 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 44px;
-  align-items: center;
-  justify-content: center;
-}
+      .about-inner {
+        max-width: 860px;
+        margin: 34px auto 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 44px;
+        align-items: center;
+        justify-content: center;
+      }
 
-.about-photo {
-  position: relative;
-  flex: 0 1 300px;
-  margin: 12px 10px 0;         /* room for the tilt and the tape */
-  padding: 10px 10px 14px;
-  background: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 10px 24px rgba(49, 66, 74, 0.16);
-  transform: rotate(-2deg);
-}
-/* a little piece of tape holding the photo in place */
-.about-photo::before {
-  content: "";
-  position: absolute;
-  top: -13px; left: 50%;
-  width: 92px; height: 26px;
-  background: rgba(252, 215, 173, 0.85);
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(49, 66, 74, 0.12);
-  transform: translateX(-50%) rotate(-4deg);
-}
-.about-photo svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 3px;
-}
-.about-photo figcaption {
-  margin-top: 10px;
-  font-size: 0.8rem;
-  font-style: italic;
-  color: rgba(49, 66, 74, 0.65);
-}
+      .about-photo {
+        position: relative;
+        flex: 0 1 300px;
+        margin: 12px 10px 0; /* room for the tilt and the tape */
+        padding: 10px 10px 14px;
+        background: #ffffff;
+        border-radius: 4px;
+        box-shadow: 0 10px 24px rgba(49, 66, 74, 0.16);
+        transform: rotate(-2deg);
+      }
+      /* a little piece of tape holding the photo in place */
+      .about-photo::before {
+        content: "";
+        position: absolute;
+        top: -13px;
+        left: 50%;
+        width: 92px;
+        height: 26px;
+        background: rgba(252, 215, 173, 0.85);
+        border-radius: 2px;
+        box-shadow: 0 2px 5px rgba(49, 66, 74, 0.12);
+        transform: translateX(-50%) rotate(-4deg);
+      }
+      .about-photo svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 3px;
+      }
+      .about-photo figcaption {
+        margin-top: 10px;
+        font-size: 0.8rem;
+        font-style: italic;
+        color: rgba(49, 66, 74, 0.65);
+      }
 
-.about-text {
-  flex: 1 1 320px;
-  max-width: 460px;
-  text-align: left;
-}
-.about-text p {
-  margin: 0 0 18px;
-  font-size: 1rem;
-  line-height: 1.75;
-  color: var(--ink);
-}
-.about-text p:last-child { margin-bottom: 0; }
+      .about-text {
+        flex: 1 1 320px;
+        max-width: 460px;
+        text-align: left;
+      }
+      .about-text p {
+        margin: 0 0 18px;
+        font-size: 1rem;
+        line-height: 1.75;
+        color: var(--ink);
+      }
+      .about-text p:last-child {
+        margin-bottom: 0;
+      }
 
-/* ============================================================
+      /* ============================================================
    6. Newsletter
    ============================================================ */
-.newsletter {
-  background: var(--soft-rose);
-  padding: 70px 20px 78px;
-  text-align: center;
-}
-.newsletter .section-note { margin-bottom: 26px; }
+      .newsletter {
+        background: var(--soft-rose);
+        padding: 70px 20px 78px;
+        text-align: center;
+      }
+      .newsletter .section-note {
+        margin-bottom: 26px;
+      }
 
-.signup {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  max-width: 520px;
-  margin: 0 auto;
-}
-.signup input {
-  flex: 1 1 240px;
-  font-family: var(--body-font);
-  font-size: 1rem;
-  color: var(--ink);
-  background: #ffffff;
-  border: 2px solid rgba(49, 66, 74, 0.25);
-  border-radius: 999px;
-  padding: 14px 22px;
-}
-.signup input:focus {
-  outline: 3px solid var(--cyan);
-  outline-offset: 2px;
-  border-color: var(--pink);
-}
-.signup .btn {
-  flex: 0 0 auto;
-  padding: 14px 34px;
-  font-family: var(--body-font);
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--ink);
-  background: var(--pink);
-  border: none;
-  border-radius: 999px;
-  cursor: pointer;
-  box-shadow: 0 6px 16px rgba(49, 66, 74, 0.16);
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-.signup .btn:hover { background: #e578ae; transform: translateY(-2px); }
-.signup .btn:active { transform: none; }
+      .signup {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        max-width: 520px;
+        margin: 0 auto;
+      }
+      .signup input {
+        flex: 1 1 240px;
+        font-family: var(--body-font);
+        font-size: 1rem;
+        color: var(--ink);
+        background: #ffffff;
+        border: 2px solid rgba(49, 66, 74, 0.25);
+        border-radius: 999px;
+        padding: 14px 22px;
+      }
+      .signup input:focus {
+        outline: 3px solid var(--cyan);
+        outline-offset: 2px;
+        border-color: var(--pink);
+      }
+      .signup .btn {
+        flex: 0 0 auto;
+        padding: 14px 34px;
+        font-family: var(--body-font);
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--ink);
+        background: var(--pink);
+        border: none;
+        border-radius: 999px;
+        cursor: pointer;
+        box-shadow: 0 6px 16px rgba(49, 66, 74, 0.16);
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease;
+      }
+      .signup .btn:hover {
+        background: #e578ae;
+        transform: translateY(-2px);
+      }
+      .signup .btn:active {
+        transform: none;
+      }
 
-.fineprint {
-  margin: 16px 0 0;
-  font-size: 0.8rem;
-  color: rgba(49, 66, 74, 0.72);
-}
+      .fineprint {
+        margin: 16px 0 0;
+        font-size: 0.8rem;
+        color: rgba(49, 66, 74, 0.72);
+      }
 
-/* ============================================================
+      /* ============================================================
    7. Footer
    ============================================================ */
-.site-footer {
-  background: var(--ink);
-  color: #f2ead9;
-  text-align: center;
-  padding: 30px 20px;
-  font-size: 0.85rem;
-}
-.site-footer p { margin: 0; }
+      .site-footer {
+        background: var(--ink);
+        color: #f2ead9;
+        text-align: center;
+        padding: 30px 20px;
+        font-size: 0.85rem;
+      }
+      .site-footer p {
+        margin: 0;
+      }
 
-/* ============================================================
+      /* ============================================================
    8. Responsive
    ============================================================ */
-@media (min-width: 700px) {
-  .cards { grid-template-columns: repeat(2, 1fr); }
-  .painting { height: 170px; }
-  .card[open] .painting { height: 220px; }
-  .header-inner { padding-top: 68px; }
-}
-@media (min-width: 1024px) {
-  .site-name { font-size: 4.4rem; }
-}
+      @media (min-width: 700px) {
+        .cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .painting {
+          height: 170px;
+        }
+        .card[open] .painting {
+          height: 220px;
+        }
+        .header-inner {
+          padding-top: 68px;
+        }
+      }
+      @media (min-width: 1024px) {
+        .site-name {
+          font-size: 4.4rem;
+        }
+      }
 
-/* Calm for people who prefer stillness */
-@media (prefers-reduced-motion: reduce) {
-  .blob,
-  .card-more,
-  .painting,
-  .hint,
-  .card,
-  .price-link,
-  .signup .btn {
-    animation: none;
-    transition: none;
-  }
-}
+      /* Calm for people who prefer stillness */
+      @media (prefers-reduced-motion: reduce) {
+        .blob,
+        .card-more,
+        .painting,
+        .hint,
+        .card,
+        .price-link,
+        .signup .btn {
+          animation: none;
+          transition: none;
+        }
+      }
 
-/*
+      /*
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 NEW COMPACT PAINT HEADER
@@ -737,370 +990,552 @@ NEW COMPACT PAINT HEADER
 --------------------------------------------------------------------------
 */
 
-.site-header{
-  position:relative;
-  background:transparent;
-  overflow:visible;
-  isolation:isolate;
-}
+      .site-header {
+        position: relative;
+        background: transparent;
+        overflow: visible;
+        isolation: isolate;
+      }
 
-/*old header parts are hidden for now*/
-.header-art,
-.wave,
-.tagline,
-.portrait-wrap,
-.name-underline{
-  display:none;
-}
+      /*old header parts are hidden for now*/
+      .header-art,
+      .wave,
+      .tagline,
+      .portrait-wrap,
+      .name-underline {
+        display: none;
+      }
 
-.header-inner{
-  max-width:none;
-  margin:0;
-  padding:0;
-  text-align: center;
-}
+      .header-inner {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
 
-.site-name{
-  display:none;
-}
+      .site-name {
+        display: none;
+      }
 
-.paint-band{
-  position: relative;
-  width:100%;
-  min-height: 150px; /*this makes it much shorter*/
-  padding:22px 20px 44px;
-  overflow:visible;
+      .paint-band {
+        position: relative;
+        width: 100%;
+        min-height: 150px; /*this makes it much shorter*/
+        padding: 22px 20px 44px;
+        overflow: visible;
 
-  background: 
-   linear-gradient(
-    90deg,
-    #61c7f2 0%,
-    #ea9186 18%,
-    #efb3d1 36%,
-    #d9d471 55%,
-    #efb3d1 71%,
-    #ea9186 87%,
-    #61c7f2 100%
-   );
-}
+        background: linear-gradient(
+          90deg,
+          #61c7f2 0%,
+          #ea9186 18%,
+          #efb3d1 36%,
+          #d9d471 55%,
+          #efb3d1 71%,
+          #ea9186 87%,
+          #61c7f2 100%
+        );
+      }
 
-/*soft irregular paint clouds*/
-.paint-band::before{
-    content: "";
-    position: absolute;
-    
-    inset:0;
+      /*soft irregular paint clouds*/
+      .paint-band::before {
+        content: "";
+        position: absolute;
 
-    z-index:0;
+        inset: 0;
 
-    background: 
+        z-index: 0;
 
-    radial-gradient(
-      ellipse at 9% 26%,
-      rgba(234, 145, 134, 0.80)0%,
-      rgba(234, 145, 134, 0.45)35%,
-      transparent 68%
-    ),
+        background:
+          radial-gradient(
+            ellipse at 9% 26%,
+            rgba(234, 145, 134, 0.8) 0%,
+            rgba(234, 145, 134, 0.45) 35%,
+            transparent 68%
+          ),
+          radial-gradient(
+            ellipse at 28% 18%,
+            rgba(239, 179, 209, 0.9) 0%,
+            rgba(239, 179, 209, 0.45) 38%,
+            transparent 69%
+          ),
+          radial-gradient(
+            ellipse at 49% 25%,
+            rgba(217, 212, 113, 0.88) 0%,
+            rgba(217, 212, 113, 0.42) 36%,
+            transparent 69%
+          ),
+          radial-gradient(
+            ellipse at 68% 17%,
+            rgba(239, 179, 209, 0.85) 0%,
+            rgba(239, 179, 209, 0.42) 35%,
+            transparent 69%
+          ),
+          radial-gradient(
+            ellipse at 88% 25%,
+            rgba(234, 145, 134, 0.82) 0%,
+            rgba(234, 145, 134, 0.44) 36%,
+            transparent 70%
+          );
 
-    radial-gradient(
-      ellipse at 28% 18%,
-      rgba(239, 179, 209, 0.90)0%,
-      rgba(239, 179, 209, 0.45)38%,
-      transparent 69%
-    ),
+        filter: blur(9px);
 
-    radial-gradient(
-      ellipse at 49% 25%,
-      rgba(217, 212, 113, 0.88)0%,
-      rgba(217, 212, 113, 0.42)36%,
-      transparent 69%
-    ),
+        pointer-events: none;
+      }
 
-    radial-gradient(
-      ellipse at 68% 17%,
-      rgba(239, 179, 209, 0.85)0%,
-      rgba(239, 179, 209, 0.42)35%,
-      transparent 69%
-    ),
+      /*Paint DRIPS*/
 
-    radial-gradient(
-      ellipse at 88% 25%,
-      rgba(234, 145, 134, 0.82)0%,
-      rgba(234, 145, 134, 0.44)36%,
-      transparent 70%
-    );
+      /*glossy soft highlight*/
+      .paint-band::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.18),
+          rgba(255, 255, 255, 0) 45%
+        );
+        pointer-events: none;
+      }
 
-    filter:blur(9px);
+      /* --- raindrops falling from the band --------------------------
+  /* --- raindrops falling from the band ---------------------------
+   Each drop is a single SVG teardrop: thin tail merged into the
+   band, swelling into a round bulb. Colors via --drip-color. */
 
-    pointer-events: none;  
-   }
+      .drip {
+        position: absolute;
+        top: calc(100% - 2px); /* tip tucks into the band, body hangs below */
+        width: 20px;
+        color: var(--drip-color, var(--paint-blue));
+        pointer-events: none;
+      }
 
-/*Paint DRIPS*/
+      .drip path {
+        fill: currentColor;
+      }
 
-/*glossy soft highlight*/
-.paint-band::after{
-  content:"";
-  position: absolute;
-  inset:0;
-  background: 
-    linear-gradient(to bottom, rgba(255,255,255,0.18),
-  rgba(255,255,255,0)45%);
-  pointer-events: none;
-}
+      .drip-1 {
+        left: 12%;
+        height: 34px;
+        --drip-color: var(--paint-blue);
+      }
 
-.drip{
-  position: absolute;
-  bottom:-2px;
-  width:20px;
-  background:var(--drip-color,var(--paint-blue));
-  border-radius:0 0 16px 16px;
-}
+      .drip-2 {
+        left: 30%;
+        height: 56px;
+        --drip-color: var(--paint-blue);
+      }
 
-.drip::after{
-  content:"";
-  position: absolute;
-  left:50%;
-  bottom:-12px;
-  transform:translateX(-50%);
-  width:26px;
-  height:26px;
-  background:inherit;
-  border-radius:50%;
-}
+      .drip-3 {
+        left: 50%;
+        height: 80px;
+        --drip-color: var(--paint-blue);
+      }
 
-.drip-1{
-  left:12%;
-  height:34px;
-  --drip-color:var(--paint-blue);
-}
+      .drip-4 {
+        left: 67%;
+        height: 42px;
+        --drip-color: var(--paint-yellow);
+      }
 
-.drip-2{
-  left:30%;
-  height:56px;
-  --drip-color:var(--paint-blue);
-}
+      .drip-5 {
+        left: 85%;
+        height: 60px;
+        --drip-color: var(--paint-coral);
+      }
 
-.drip-3{
-  left:50%;
-  height:80px;
-  --drip-color:var(--paint-blue);
-}
+      .header-logo {
+        position: relative;
+        z-index: 2;
+        display: block;
+        width: min(620px, 82vw);
+        height: auto;
+        margin: 0 auto;
+        filter: drop-shadow(0 6px 14px rgba(49, 66, 74, 0.16));
+      }
 
-.drip-4{
-  left:67%;
-  height:42px;
-  --drip-color:var(--paint-yellow);
-}
+      /*small screens*/
 
-.drip-5{
-  left:85%;
-  height:60px;
-  --drip-color:var(--paint-coral);
-}
+      @media (max-width: 700px) {
+        .paint-band {
+          min-height: 110px;
+          padding: 16px 12px 34px;
+        }
 
-.header-logo{
-  position:relative;
-  z-index:2;
-  display:block;
-  width:min(620px, 82vw);
-  height:auto;
-  margin: 0 auto;
-  filter:drop-shadow(0 6px 14px rgba(49, 66, 74, 0.16));
-}
+        .header-logo {
+          width: 88vw;
+        }
 
-/*small screens*/
+        .drip-3 {
+          height: 58px;
+        }
+        .drip-5 {
+          height: 44px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============================ HEADER ============================ -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="paint-band">
+          <svg
+            class="drip drip-1"
+            viewBox="0 0 20 34"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M10 0 C10 7 0 16 0 24 A10 10 0 0 0 20 24 C20 16 10 7 10 0 Z"
+            />
+            <ellipse
+              cx="6.5"
+              cy="22"
+              rx="2.4"
+              ry="3.4"
+              fill="#ffffff"
+              opacity="0.4"
+            />
+          </svg>
+          <svg
+            class="drip drip-2"
+            viewBox="0 0 20 56"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M10 0 C10 14 0 38 0 46 A10 10 0 0 0 20 46 C20 38 10 14 10 0 Z"
+            />
+            <ellipse
+              cx="6.5"
+              cy="44"
+              rx="2.4"
+              ry="3.4"
+              fill="#ffffff"
+              opacity="0.4"
+            />
+          </svg>
+          <svg
+            class="drip drip-3"
+            viewBox="0 0 20 80"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M10 0 C10 21 0 62 0 70 A10 10 0 0 0 20 70 C20 62 10 21 10 0 Z"
+            />
+            <ellipse
+              cx="6.5"
+              cy="68"
+              rx="2.4"
+              ry="3.4"
+              fill="#ffffff"
+              opacity="0.4"
+            />
+          </svg>
+          <svg
+            class="drip drip-4"
+            viewBox="0 0 20 42"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M10 0 C10 10 0 24 0 32 A10 10 0 0 0 20 32 C20 24 10 10 10 0 Z"
+            />
+            <ellipse
+              cx="6.5"
+              cy="30"
+              rx="2.4"
+              ry="3.4"
+              fill="#ffffff"
+              opacity="0.4"
+            />
+          </svg>
+          <svg
+            class="drip drip-5"
+            viewBox="0 0 20 60"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M10 0 C10 15 0 42 0 50 A10 10 0 0 0 20 50 C20 42 10 15 10 0 Z"
+            />
+            <ellipse
+              cx="6.5"
+              cy="48"
+              rx="2.4"
+              ry="3.4"
+              fill="#ffffff"
+              opacity="0.4"
+            />
+          </svg>
 
-@media(max-width: 700px){
-  .paint-band{
-    min-height: 110px;
-    padding:16px 12px 34px;
-  }
+          <img
+            class="header-logo"
+            src="images/julie-sinclair-logo.svg"
+            alt="Julie Sinclair logo with a cat"
+          />
+        </div>
+      </div>
+    </header>
 
-  .header-logo{
-    width:88vw;
-  }
-
-  .drip-3{height:58px;}
-  .drip-5{height:44px;}
-}
-
-</style>
-</head>
-<body>
-
-<!-- ============================ HEADER ============================ -->
-<header class="site-header">
-  <div class="header-inner">
-     <div class="paint-band">
-      <span class="drip drip-1" aria-hidden="true"></span>
-      <span class="drip drip-2" aria-hidden="true"></span>
-      <span class="drip drip-3" aria-hidden="true"></span>
-      <span class="drip drip-4" aria-hidden="true"></span>
-      <span class="drop drip-5" aria-hidden="true"></span>
-
-      <img
-       class="header-logo"
-       src="images/julie-sinclair-logo.svg"
-       alt="Julie Sinclair logo with a cat"
-       >
-  </div>
-  </div>
-</header>
-
-<main>
-  <!-- ============================ QUIET THINGS ============================
+    <main>
+      <!-- ============================ QUIET THINGS ============================
        Deliberately unlabeled as a shop: cards open with a description,
        and only the revealed price links out to the store.
        Replace every price-link href with the real shop URL (tbd).
   -->
-  <section class="quiet-things" id="quiet-things" aria-labelledby="things-label">
-    <h2 class="section-label" id="things-label">Quiet things</h2>
-    <p class="section-note">a few small things from the studio &mdash; open one to look a little closer</p>
+      <section
+        class="quiet-things"
+        id="quiet-things"
+        aria-labelledby="things-label"
+      >
+        <h2 class="section-label" id="things-label">Quiet things</h2>
+        <p class="section-note">
+          a few small things from the studio &mdash; open one to look a little
+          closer
+        </p>
 
-    <ul class="cards">
-      <li>
-        <details class="card">
-          <summary>
-            <span class="artwork" aria-hidden="true">
-              <span class="frame"><span class="mat"><span class="painting p-lake"></span></span></span>
-            </span>
-            <span class="card-title">Morning Lake</span>
-          </summary>
-          <div class="card-more">
-            <p class="card-desc">Painted in one sitting, very early, before the wind arrived.
-               The pink in the water lasted about four minutes; the painting tries
-               to keep it a little longer.</p>
-            <p class="card-medium">original watercolour &middot; A4</p>
-            <a class="price-link" href="https://julie-sinclair.example/shop">
-              <span class="price-amount">&euro;140</span> &middot; take it home
-            </a>
-          </div>
-        </details>
-      </li>
-      <li>
-        <details class="card">
-          <summary>
-            <span class="artwork" aria-hidden="true">
-              <span class="frame"><span class="mat"><span class="painting p-birch"><i></i><i></i><i></i><i></i></span></span></span>
-            </span>
-            <span class="card-title">Birches in June</span>
-          </summary>
-          <div class="card-more">
-            <p class="card-desc">The birches near her grandmother's house. They never stand
-               still in drawings, but they behave beautifully in paint.</p>
-            <p class="card-medium">print on cotton paper &middot; A3</p>
-            <a class="price-link" href="https://julie-sinclair.example/shop">
-              <span class="price-amount">&euro;45</span> &middot; take it home
-            </a>
-          </div>
-        </details>
-      </li>
-      <li>
-        <details class="card">
-          <summary>
-            <span class="artwork" aria-hidden="true">
-              <span class="frame"><span class="mat"><span class="painting p-peony"></span></span></span>
-            </span>
-            <span class="card-title">Peonies for No One</span>
-          </summary>
-          <div class="card-more">
-            <p class="card-desc">A small bouquet that had nowhere to go. Now it stays open
-               on a wall, waiting politely, forever.</p>
-            <p class="card-medium">original gouache &middot; 20 &times; 20 cm</p>
-            <a class="price-link" href="https://julie-sinclair.example/shop">
-              <span class="price-amount">&euro;90</span> &middot; take it home
-            </a>
-          </div>
-        </details>
-      </li>
-      <li>
-        <details class="card">
-          <summary>
-            <span class="artwork" aria-hidden="true">
-              <span class="frame"><span class="mat"><span class="painting p-hour"></span></span></span>
-            </span>
-            <span class="card-title">Blue Hour</span>
-          </summary>
-          <div class="card-more">
-            <p class="card-desc">The ten minutes when the lake cannot decide between day
-               and night. Small enough for an envelope; large enough to hold
-               the whole sky.</p>
-            <p class="card-medium">small original &middot; postcard size</p>
-            <a class="price-link" href="https://julie-sinclair.example/shop">
-              <span class="price-amount">&euro;25</span> &middot; take it home
-            </a>
-          </div>
-        </details>
-      </li>
-    </ul>
-  </section>
+        <ul class="cards">
+          <li>
+            <details class="card">
+              <summary>
+                <span class="artwork" aria-hidden="true">
+                  <span class="frame"
+                    ><span class="mat"
+                      ><span class="painting p-lake"></span></span
+                  ></span>
+                </span>
+                <span class="card-title">Morning Lake</span>
+              </summary>
+              <div class="card-more">
+                <p class="card-desc">
+                  Painted in one sitting, very early, before the wind arrived.
+                  The pink in the water lasted about four minutes; the painting
+                  tries to keep it a little longer.
+                </p>
+                <p class="card-medium">original watercolour &middot; A4</p>
+                <a
+                  class="price-link"
+                  href="https://julie-sinclair.example/shop"
+                >
+                  <span class="price-amount">&euro;140</span> &middot; take it
+                  home
+                </a>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="card">
+              <summary>
+                <span class="artwork" aria-hidden="true">
+                  <span class="frame"
+                    ><span class="mat"
+                      ><span class="painting p-birch"
+                        ><i></i><i></i><i></i><i></i></span></span
+                  ></span>
+                </span>
+                <span class="card-title">Birches in June</span>
+              </summary>
+              <div class="card-more">
+                <p class="card-desc">
+                  The birches near her grandmother's house. They never stand
+                  still in drawings, but they behave beautifully in paint.
+                </p>
+                <p class="card-medium">print on cotton paper &middot; A3</p>
+                <a
+                  class="price-link"
+                  href="https://julie-sinclair.example/shop"
+                >
+                  <span class="price-amount">&euro;45</span> &middot; take it
+                  home
+                </a>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="card">
+              <summary>
+                <span class="artwork" aria-hidden="true">
+                  <span class="frame"
+                    ><span class="mat"
+                      ><span class="painting p-peony"></span></span
+                  ></span>
+                </span>
+                <span class="card-title">Peonies for No One</span>
+              </summary>
+              <div class="card-more">
+                <p class="card-desc">
+                  A small bouquet that had nowhere to go. Now it stays open on a
+                  wall, waiting politely, forever.
+                </p>
+                <p class="card-medium">
+                  original gouache &middot; 20 &times; 20 cm
+                </p>
+                <a
+                  class="price-link"
+                  href="https://julie-sinclair.example/shop"
+                >
+                  <span class="price-amount">&euro;90</span> &middot; take it
+                  home
+                </a>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="card">
+              <summary>
+                <span class="artwork" aria-hidden="true">
+                  <span class="frame"
+                    ><span class="mat"
+                      ><span class="painting p-hour"></span></span
+                  ></span>
+                </span>
+                <span class="card-title">Blue Hour</span>
+              </summary>
+              <div class="card-more">
+                <p class="card-desc">
+                  The ten minutes when the lake cannot decide between day and
+                  night. Small enough for an envelope; large enough to hold the
+                  whole sky.
+                </p>
+                <p class="card-medium">small original &middot; postcard size</p>
+                <a
+                  class="price-link"
+                  href="https://julie-sinclair.example/shop"
+                >
+                  <span class="price-amount">&euro;25</span> &middot; take it
+                  home
+                </a>
+              </div>
+            </details>
+          </li>
+        </ul>
+      </section>
 
-  <!-- ============================ ABOUT ============================ -->
-  <section class="about" aria-labelledby="about-label">
-    <h2 class="section-label" id="about-label">About Julie</h2>
+      <!-- ============================ ABOUT ============================ -->
+      <section class="about" aria-labelledby="about-label">
+        <h2 class="section-label" id="about-label">About Julie</h2>
 
-    <div class="about-inner">
-      <figure class="about-photo">
-        <!-- Placeholder image: swap this inline SVG for a real photograph,
+        <div class="about-inner">
+          <figure class="about-photo">
+            <!-- Placeholder image: swap this inline SVG for a real photograph,
              e.g. <img src="julie.jpg" alt="Julie Sinclair in her studio" width="320"> -->
-        <svg viewBox="0 0 320 380" role="img" aria-label="Placeholder portrait of Julie Sinclair">
-          <defs>
-            <linearGradient id="photo-bg" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#fcd7ad"/>
-              <stop offset="1" stop-color="#ea8bbc"/>
-            </linearGradient>
-          </defs>
-          <rect width="320" height="380" fill="url(#photo-bg)"/>
-          <circle cx="252" cy="82" r="54" fill="#82DDF0" opacity="0.4"/>
-          <circle cx="58" cy="308" r="70" fill="#5296A5" opacity="0.22"/>
-          <!-- soft silhouette, blonde hair -->
-          <ellipse cx="160" cy="200" rx="86" ry="98" fill="#e9c491"/>
-          <rect x="140" y="255" width="40" height="50" fill="#f6e2d4"/>
-          <path d="M60 380 C 70 320 115 296 160 296 C 205 296 250 320 260 380 Z" fill="#D8E8D0"/>
-          <ellipse cx="160" cy="212" rx="62" ry="72" fill="#fdeee4"/>
-          <path d="M98 200 C 96 140 130 118 160 118 C 190 118 224 140 222 200 C 210 168 190 152 160 152 C 130 152 110 168 98 200 Z" fill="#f2cd97"/>
-          <path d="M128 214 q 12 10 24 0" stroke="#465961" stroke-width="4" fill="none" stroke-linecap="round"/>
-          <path d="M168 214 q 12 10 24 0" stroke="#465961" stroke-width="4" fill="none" stroke-linecap="round"/>
-          <ellipse cx="126" cy="238" rx="10" ry="5" fill="#ea8bbc" opacity="0.45"/>
-          <ellipse cx="194" cy="238" rx="10" ry="5" fill="#ea8bbc" opacity="0.45"/>
-          <path d="M152 252 q 8 6 16 0" stroke="#ea8bbc" stroke-width="5" fill="none" stroke-linecap="round"/>
-        </svg>
-        <figcaption>Julie, somewhere in June</figcaption>
-      </figure>
+            <svg
+              viewBox="0 0 320 380"
+              role="img"
+              aria-label="Placeholder portrait of Julie Sinclair"
+            >
+              <defs>
+                <linearGradient id="photo-bg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#fcd7ad" />
+                  <stop offset="1" stop-color="#ea8bbc" />
+                </linearGradient>
+              </defs>
+              <rect width="320" height="380" fill="url(#photo-bg)" />
+              <circle cx="252" cy="82" r="54" fill="#82DDF0" opacity="0.4" />
+              <circle cx="58" cy="308" r="70" fill="#5296A5" opacity="0.22" />
+              <!-- soft silhouette, blonde hair -->
+              <ellipse cx="160" cy="200" rx="86" ry="98" fill="#e9c491" />
+              <rect x="140" y="255" width="40" height="50" fill="#f6e2d4" />
+              <path
+                d="M60 380 C 70 320 115 296 160 296 C 205 296 250 320 260 380 Z"
+                fill="#D8E8D0"
+              />
+              <ellipse cx="160" cy="212" rx="62" ry="72" fill="#fdeee4" />
+              <path
+                d="M98 200 C 96 140 130 118 160 118 C 190 118 224 140 222 200 C 210 168 190 152 160 152 C 130 152 110 168 98 200 Z"
+                fill="#f2cd97"
+              />
+              <path
+                d="M128 214 q 12 10 24 0"
+                stroke="#465961"
+                stroke-width="4"
+                fill="none"
+                stroke-linecap="round"
+              />
+              <path
+                d="M168 214 q 12 10 24 0"
+                stroke="#465961"
+                stroke-width="4"
+                fill="none"
+                stroke-linecap="round"
+              />
+              <ellipse
+                cx="126"
+                cy="238"
+                rx="10"
+                ry="5"
+                fill="#ea8bbc"
+                opacity="0.45"
+              />
+              <ellipse
+                cx="194"
+                cy="238"
+                rx="10"
+                ry="5"
+                fill="#ea8bbc"
+                opacity="0.45"
+              />
+              <path
+                d="M152 252 q 8 6 16 0"
+                stroke="#ea8bbc"
+                stroke-width="5"
+                fill="none"
+                stroke-linecap="round"
+              />
+            </svg>
+            <figcaption>Julie, somewhere in June</figcaption>
+          </figure>
 
-      <div class="about-text">
-        <p>Julie Sinclair paints small, quiet things &mdash; lakes before the wind,
-           birches in June, flowers that never got given away. She works slowly,
-           in the mornings, with the door closed, and finishes very few pieces.</p>
-        <p>She is shy about everything else. If you would like to know her, look
-           at the paintings &mdash; that is where she keeps the things she does
-           not say out loud.</p>
-      </div>
-    </div>
-  </section>
+          <div class="about-text">
+            <p>
+              Julie Sinclair paints small, quiet things &mdash; lakes before the
+              wind, birches in June, flowers that never got given away. She
+              works slowly, in the mornings, with the door closed, and finishes
+              very few pieces.
+            </p>
+            <p>
+              She is shy about everything else. If you would like to know her,
+              look at the paintings &mdash; that is where she keeps the things
+              she does not say out loud.
+            </p>
+          </div>
+        </div>
+      </section>
 
-  <!-- ============================ NEWSLETTER ============================ -->
-  <section class="newsletter" aria-labelledby="letters-label">
-    <h2 class="section-label" id="letters-label">Letters from the studio</h2>
-    <p class="section-note">one soft letter each month &mdash; new paintings, no noise</p>
+      <!-- ============================ NEWSLETTER ============================ -->
+      <section class="newsletter" aria-labelledby="letters-label">
+        <h2 class="section-label" id="letters-label">
+          Letters from the studio
+        </h2>
+        <p class="section-note">
+          one soft letter each month &mdash; new paintings, no noise
+        </p>
 
-    <!-- Point this form at your mailing-list provider's endpoint. -->
-    <form class="signup" action="#" method="post">
-      <label class="visually-hidden" for="email">Email address</label>
-      <input type="email" id="email" name="email"
-             placeholder="your@email.com"
-             autocomplete="email" inputmode="email" required>
-      <button class="btn" type="submit">Join the list</button>
-    </form>
+        <!-- Point this form at your mailing-list provider's endpoint. -->
+        <form class="signup" action="#" method="post">
+          <label class="visually-hidden" for="email">Email address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="your@email.com"
+            autocomplete="email"
+            inputmode="email"
+            required
+          />
+          <button class="btn" type="submit">Join the list</button>
+        </form>
 
-    <p class="fineprint">One letter a month. Unsubscribe any time.</p>
-  </section>
-</main>
+        <p class="fineprint">One letter a month. Unsubscribe any time.</p>
+      </section>
+    </main>
 
-<!-- ============================ FOOTER ============================ -->
-<footer class="site-footer">
-  <p>&copy; 2026 Julie Sinclair &middot; all artwork &copy; the artist</p>
-</footer>
-
-</body>
+    <!-- ============================ FOOTER ============================ -->
+    <footer class="site-footer">
+      <p>&copy; 2026 Julie Sinclair &middot; all artwork &copy; the artist</p>
+    </footer>
+  </body>
 </html>
