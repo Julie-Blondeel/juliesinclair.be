@@ -481,10 +481,10 @@
         margin: 0 auto;
         padding: 0;
 
-        width:min(1180px, 92vw);
+        width:min(900px, 88vw);
         display: grid;
         grid-template-columns:1fr;
-        gap: 30px;
+        gap: 24px;
       }
       .cards li {
         display: flex;
@@ -584,6 +584,15 @@
         height: auto;
         border-radius:3px;
         overflow: hidden;
+      }
+
+      .painting-image {
+        display: block;
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 3px;
       }
 
      /* .card[open] .painting {
@@ -952,21 +961,12 @@
    ============================================================ */
       @media (min-width: 700px) {
         .cards {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        /*.painting {
-          height: 170px;
-        }
-        .card[open] .painting {
-          height: 220px;
-        }*/
-        .header-inner {
-          padding-top: 68px;
+          grid-template-columns: repeat(2,1fr);
         }
       }
-      @media (min-width: 1024px) {
-        .site-name {
-          font-size: 4.4rem;
+      @media (min-width: 900px) {
+        .cards {
+          grid-template-columns:repeat(3, 1fr);
         }
       }
 
@@ -1410,119 +1410,411 @@ NEW COMPACT PAINT HEADER
         </p>
 
         <ul class="cards">
-          <li>
-            <details class="card">
-              <summary>
-                <span class="artwork" aria-hidden="true">
-                  <span class="frame"
-                    ><span class="mat"
-                      ><span class="painting p-lake"></span></span
-                  ></span>
-                </span>
-                <span class="card-title">Morning Lake</span>
-              </summary>
-              <div class="card-more">
-                <p class="card-desc">
-                  Painted in one sitting, very early, before the wind arrived.
-                  The pink in the water lasted about four minutes; the painting
-                  tries to keep it a little longer.
-                </p>
-                <p class="card-medium">original watercolour &middot; A4</p>
-                <a
-                  class="price-link"
-                  href="https://julie-sinclair.example/shop"
-                >
-                  <span class="price-amount">&euro;140</span> &middot; take it
-                  home
-                </a>
-              </div>
-            </details>
-          </li>
-          <li>
-            <details class="card">
-              <summary>
-                <span class="artwork" aria-hidden="true">
-                  <span class="frame"
-                    ><span class="mat"
-                      ><span class="painting p-birch"
-                        ><i></i><i></i><i></i><i></i></span></span
-                  ></span>
-                </span>
-                <span class="card-title">Birches in June</span>
-              </summary>
-              <div class="card-more">
-                <p class="card-desc">
-                  The birches near her grandmother's house. They never stand
-                  still in drawings, but they behave beautifully in paint.
-                </p>
-                <p class="card-medium">print on cotton paper &middot; A3</p>
-                <a
-                  class="price-link"
-                  href="https://julie-sinclair.example/shop"
-                >
-                  <span class="price-amount">&euro;45</span> &middot; take it
-                  home
-                </a>
-              </div>
-            </details>
-          </li>
-          <li>
-            <details class="card">
-              <summary>
-                <span class="artwork" aria-hidden="true">
-                  <span class="frame"
-                    ><span class="mat"
-                      ><span class="painting p-peony"></span></span
-                  ></span>
-                </span>
-                <span class="card-title">Peonies for No One</span>
-              </summary>
-              <div class="card-more">
-                <p class="card-desc">
-                  A small bouquet that had nowhere to go. Now it stays open on a
-                  wall, waiting politely, forever.
-                </p>
-                <p class="card-medium">
-                  original gouache &middot; 20 &times; 20 cm
-                </p>
-                <a
-                  class="price-link"
-                  href="https://julie-sinclair.example/shop"
-                >
-                  <span class="price-amount">&euro;90</span> &middot; take it
-                  home
-                </a>
-              </div>
-            </details>
-          </li>
-          <li>
-            <details class="card">
-              <summary>
-                <span class="artwork" aria-hidden="true">
-                  <span class="frame"
-                    ><span class="mat"
-                      ><span class="painting p-hour"></span></span
-                  ></span>
-                </span>
-                <span class="card-title">Blue Hour</span>
-              </summary>
-              <div class="card-more">
-                <p class="card-desc">
-                  The ten minutes when the lake cannot decide between day and
-                  night. Small enough for an envelope; large enough to hold the
-                  whole sky.
-                </p>
-                <p class="card-medium">small original &middot; postcard size</p>
-                <a
-                  class="price-link"
-                  href="https://julie-sinclair.example/shop"
-                >
-                  <span class="price-amount">&euro;25</span> &middot; take it
-                  home
-                </a>
-              </div>
-            </details>
-          </li>
+
+
+         <li>
+  <details class="card">
+
+    <summary>
+      <span class="artwork">
+        <span class="frame">
+          <span class="mat">
+
+            <img
+              class="painting-image"
+              src="images/artwork-01.jpg"
+              alt="Title of artwork"
+            >
+
+          </span>
+        </span>
+      </span>
+
+      <span class="card-title">Artwork title</span>
+    </summary>
+
+
+    <div class="card-more">
+
+      <p class="card-desc">
+        Write your description here.
+      </p>
+
+      <p class="card-medium">
+        Original artwork · A4
+      </p>
+
+      <a
+        class="price-link"
+        href="#"
+      >
+        <span class="price-amount">€140</span> · take it home
+      </a>
+
+    </div>
+
+  </details>
+</li>
+
+<li>
+  <details class="card">
+
+    <summary>
+      <span class="artwork">
+        <span class="frame">
+          <span class="mat">
+
+            <img
+              class="painting-image"
+              src="images/artwork-01.jpg"
+              alt="Title of artwork"
+            >
+
+          </span>
+        </span>
+      </span>
+
+      <span class="card-title">Artwork title</span>
+    </summary>
+
+
+    <div class="card-more">
+
+      <p class="card-desc">
+        Write your description here.
+      </p>
+
+      <p class="card-medium">
+        Original artwork · A4
+      </p>
+
+      <a
+        class="price-link"
+        href="#"
+      >
+        <span class="price-amount">€140</span> · take it home
+      </a>
+
+    </div>
+
+  </details>
+</li>
+
+<li>
+  <details class="card">
+
+    <summary>
+      <span class="artwork">
+        <span class="frame">
+          <span class="mat">
+
+            <img
+              class="painting-image"
+              src="images/artwork-01.jpg"
+              alt="Title of artwork"
+            >
+
+          </span>
+        </span>
+      </span>
+
+      <span class="card-title">Artwork title</span>
+    </summary>
+
+
+    <div class="card-more">
+
+      <p class="card-desc">
+        Write your description here.
+      </p>
+
+      <p class="card-medium">
+        Original artwork · A4
+      </p>
+
+      <a
+        class="price-link"
+        href="#"
+      >
+        <span class="price-amount">€140</span> · take it home
+      </a>
+
+    </div>
+
+  </details>
+</li>
+
+      <li>
+  <details class="card">
+
+    <summary>
+      <span class="artwork">
+        <span class="frame">
+          <span class="mat">
+
+            <img
+              class="painting-image"
+              src="images/artwork-01.jpg"
+              alt="Title of artwork"
+            >
+
+          </span>
+        </span>
+      </span>
+
+      <span class="card-title">Artwork title</span>
+    </summary>
+
+
+    <div class="card-more">
+
+      <p class="card-desc">
+        Write your description here.
+      </p>
+
+      <p class="card-medium">
+        Original artwork · A4
+      </p>
+
+      <a
+        class="price-link"
+        href="#"
+      >
+        <span class="price-amount">€140</span> · take it home
+      </a>
+
+    </div>
+
+  </details>
+</li>
+
+
+<li>
+  <details class="card">
+
+    <summary>
+      <span class="artwork">
+        <span class="frame">
+          <span class="mat">
+
+            <img
+              class="painting-image"
+              src="images/artwork-01.jpg"
+              alt="Title of artwork"
+            >
+
+          </span>
+        </span>
+      </span>
+
+      <span class="card-title">Artwork title</span>
+    </summary>
+
+
+    <div class="card-more">
+
+      <p class="card-desc">
+        Write your description here.
+      </p>
+
+      <p class="card-medium">
+        Original artwork · A4
+      </p>
+
+      <a
+        class="price-link"
+        href="#"
+      >
+        <span class="price-amount">€140</span> · take it home
+      </a>
+
+    </div>
+
+  </details>
+</li>
+
+
+<li>
+  <details class="card">
+
+    <summary>
+      <span class="artwork">
+        <span class="frame">
+          <span class="mat">
+
+            <img
+              class="painting-image"
+              src="images/artwork-01.jpg"
+              alt="Title of artwork"
+            >
+
+          </span>
+        </span>
+      </span>
+
+      <span class="card-title">Artwork title</span>
+    </summary>
+
+
+    <div class="card-more">
+
+      <p class="card-desc">
+        Write your description here.
+      </p>
+
+      <p class="card-medium">
+        Original artwork · A4
+      </p>
+
+      <a
+        class="price-link"
+        href="#"
+      >
+        <span class="price-amount">€140</span> · take it home
+      </a>
+
+    </div>
+
+  </details>
+</li>
+
+
+
+<li>
+  <details class="card">
+
+    <summary>
+      <span class="artwork">
+        <span class="frame">
+          <span class="mat">
+
+            <img
+              class="painting-image"
+              src="images/artwork-01.jpg"
+              alt="Title of artwork"
+            >
+
+          </span>
+        </span>
+      </span>
+
+      <span class="card-title">Artwork title</span>
+    </summary>
+
+
+    <div class="card-more">
+
+      <p class="card-desc">
+        Write your description here.
+      </p>
+
+      <p class="card-medium">
+        Original artwork · A4
+      </p>
+
+      <a
+        class="price-link"
+        href="#"
+      >
+        <span class="price-amount">€140</span> · take it home
+      </a>
+
+    </div>
+
+  </details>
+</li>
+
+
+
+<li>
+  <details class="card">
+
+    <summary>
+      <span class="artwork">
+        <span class="frame">
+          <span class="mat">
+
+            <img
+              class="painting-image"
+              src="images/artwork-01.jpg"
+              alt="Title of artwork"
+            >
+
+          </span>
+        </span>
+      </span>
+
+      <span class="card-title">Artwork title</span>
+    </summary>
+
+
+    <div class="card-more">
+
+      <p class="card-desc">
+        Write your description here.
+      </p>
+
+      <p class="card-medium">
+        Original artwork · A4
+      </p>
+
+      <a
+        class="price-link"
+        href="#"
+      >
+        <span class="price-amount">€140</span> · take it home
+      </a>
+
+    </div>
+
+  </details>
+</li>
+
+
+
+<li>
+  <details class="card">
+
+    <summary>
+      <span class="artwork">
+        <span class="frame">
+          <span class="mat">
+
+            <img
+              class="painting-image"
+              src="images/artwork-01.jpg"
+              alt="Title of artwork"
+            >
+
+          </span>
+        </span>
+      </span>
+
+      <span class="card-title">Artwork title</span>
+    </summary>
+
+
+    <div class="card-more">
+
+      <p class="card-desc">
+        Write your description here.
+      </p>
+
+      <p class="card-medium">
+        Original artwork · A4
+      </p>
+
+      <a
+        class="price-link"
+        href="#"
+      >
+        <span class="price-amount">€140</span> · take it home
+      </a>
+
+    </div>
+
+  </details>
+</li>
         </ul>
       </section>
 
