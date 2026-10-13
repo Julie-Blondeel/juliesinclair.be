@@ -1117,6 +1117,90 @@ NEW COMPACT PAINT HEADER
           rgba(255, 255, 255, 0) 50%
         );
       }
+      /* ============================================================
+   6b. Store — "take it home" form, styled like the newsletter
+   ============================================================ */
+      .store {
+        background: var(--soft-rose);
+        padding: 70px 20px 78px;
+        text-align: center;
+      }
+      .store .section-note {
+        margin-bottom: 26px;
+      }
+
+      /* each field on its own line instead of the newsletter's row */
+      .store .signup {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+
+      .store .signup input,
+      .store .signup textarea {
+        flex: 0 0 auto; /* .signup input sets flex-basis 240px — that's a
+                     HEIGHT in a column, so it must be reset */
+        width: 100%;
+        font-family: var(--body-font);
+        font-size: 1rem;
+        color: var(--ink);
+        background: #ffffff;
+        border: 2px solid rgba(49, 66, 74, 0.25);
+        padding: 14px 22px;
+      }
+
+      /* single-line fields keep the newsletter pill shape */
+      .store .signup input {
+        border-radius: 999px;
+      }
+
+      /* textarea gets a soft rounded rectangle instead */
+      .store .signup textarea {
+        border-radius: 18px;
+        min-height: 110px;
+        resize: vertical;
+        line-height: 1.6;
+      }
+
+      .store .signup input:focus,
+      .store .signup textarea:focus {
+        outline: 3px solid var(--cyan);
+        outline-offset: 2px;
+        border-color: var(--pink);
+      }
+
+      /* the artwork name, as a little gift-tag */
+      .store .buy-artwork {
+        align-self: center;
+        margin: 0;
+        font-size: 0.9rem;
+        color: rgba(49, 66, 74, 0.8);
+        background: #ffffff;
+        border: 2px dashed rgba(49, 66, 74, 0.25);
+        border-radius: 999px;
+        padding: 8px 20px;
+      }
+      .store .buy-artwork strong {
+        color: var(--ink);
+      }
+
+      /* button keeps its natural width instead of stretching */
+      .store .signup .btn {
+        align-self: center;
+        margin-top: 6px;
+      }
+
+      .store .buy-close {
+        align-self: center;
+        margin-top: 2px;
+        font-size: 0.85rem;
+        color: rgba(49, 66, 74, 0.72);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .store .buy-close:hover {
+        color: var(--ink);
+      }
 
       /* --- raindrops falling from the band --------------------------
   /* --- raindrops falling from the band ---------------------------
@@ -1244,6 +1328,53 @@ NEW COMPACT PAINT HEADER
         }
       }
     </style>
+    <script>
+      (function () {
+        function init() {
+          var section = document.getElementById("buy");
+          if (!section) return;
+
+          var nameEl = document.getElementById("buy-artwork-name");
+          var field = document.getElementById("buy-artwork-field");
+
+          // "#buy/Where%20we%20touch" -> "Where we touch", otherwise null
+          function artworkFromHash() {
+            var hash = window.location.hash;
+            if (hash.indexOf("#buy/") !== 0) return null;
+            try {
+              return decodeURIComponent(hash.slice(5));
+            } catch (e) {
+              return hash.slice(5);
+            }
+          }
+
+          function sync() {
+            var artwork = artworkFromHash();
+            if (artwork) {
+              nameEl.textContent = artwork;
+              field.value = artwork;
+              section.hidden = false;
+
+              // browser can't jump to #buy/... (no element with that id,
+              // and the section was hidden at navigation time) — scroll manually
+              section.scrollIntoView({ behavior: "smooth", block: "start" });
+              section.focus({ preventScroll: true }); // keyboard focus only
+            } else {
+              section.hidden = true;
+            }
+          }
+
+          window.addEventListener("hashchange", sync);
+          sync(); // handles page loads that already carry a #buy/... hash
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", init);
+        } else {
+          init();
+        }
+      })();
+    </script>
   </head>
   <body>
     <!-- ============================ HEADER ============================ -->
@@ -1406,7 +1537,7 @@ NEW COMPACT PAINT HEADER
                       <img
                         class="painting-image"
                         src="images/artwork-01.jpg"
-                        alt="Title of artwork"
+                        alt="Where we touch"
                       />
                     </span>
                   </span>
@@ -1425,7 +1556,7 @@ NEW COMPACT PAINT HEADER
 
                 <p class="card-medium">Original artwork · A3</p>
 
-                <a class="price-link" href="#">
+                <a class="price-link" href="#buy/Where We Touch">
                   <span class="price-amount">€60</span> · take it home
                 </a>
               </div>
@@ -1443,7 +1574,7 @@ NEW COMPACT PAINT HEADER
                       <img
                         class="painting-image"
                         src="images/artwork-02.jpg"
-                        alt="Title of artwork"
+                        alt="Still Blooming"
                       />
                     </span>
                   </span>
@@ -1461,7 +1592,7 @@ NEW COMPACT PAINT HEADER
 
                 <p class="card-medium">Original artwork · A3</p>
 
-                <a class="price-link" href="#">
+                <a class="price-link" href="#buy/Still Blooming">
                   <span class="price-amount">€50</span> · take it home
                 </a>
               </div>
@@ -1497,7 +1628,7 @@ NEW COMPACT PAINT HEADER
 
                 <p class="card-medium">Original artwork · A3</p>
 
-                <a class="price-link" href="#">
+                <a class="price-link" href="#buy/Where the Wild Ones Meet">
                   <span class="price-amount">€60</span> · take it home
                 </a>
               </div>
@@ -1533,7 +1664,7 @@ NEW COMPACT PAINT HEADER
 
                 <p class="card-medium">Original artwork · A3</p>
 
-                <a class="price-link" href="#">
+                <a class="price-link" href="#buy/The World Gives Enough">
                   <span class="price-amount">€55</span> · take it home
                 </a>
               </div>
@@ -1571,7 +1702,7 @@ NEW COMPACT PAINT HEADER
 
                 <p class="card-medium">Original artwork · A3</p>
 
-                <a class="price-link" href="#">
+                <a class="price-link" href="#buy/When Legends Come Alive">
                   <span class="price-amount">€65</span> · take it home
                 </a>
               </div>
@@ -1609,7 +1740,7 @@ NEW COMPACT PAINT HEADER
 
                 <p class="card-medium">Original artwork · A3</p>
 
-                <a class="price-link" href="#">
+                <a class="price-link" href="#buy/Being Wild">
                   <span class="price-amount">€55</span> · take it home
                 </a>
               </div>
@@ -1645,7 +1776,7 @@ NEW COMPACT PAINT HEADER
 
                 <p class="card-medium">Original artwork · A3</p>
 
-                <a class="price-link" href="#">
+                <a class="price-link" href="#buy/Where the Current Carries Us">
                   <span class="price-amount">€55</span> · take it home
                 </a>
               </div>
@@ -1682,7 +1813,7 @@ NEW COMPACT PAINT HEADER
 
                 <p class="card-medium">Original artwork · A3</p>
 
-                <a class="price-link" href="#">
+                <a class="price-link" href="#buy/Far Away and Close">
                   <span class="price-amount">€70</span> · take it home
                 </a>
               </div>
@@ -1719,7 +1850,7 @@ NEW COMPACT PAINT HEADER
 
                 <p class="card-medium">Original artwork · A3</p>
 
-                <a class="price-link" href="#">
+                <a class="price-link" href="#buy/Threads Through Time">
                   <span class="price-amount">€70</span> · take it home
                 </a>
               </div>
@@ -1776,7 +1907,6 @@ NEW COMPACT PAINT HEADER
           soft and kind letters &mdash; new paintings, no noise
         </p>
 
-        <!-- Point this form at your mailing-list provider's endpoint. -->
         <form
           class="signup"
           action="https://forminit.com/f/48d0s9iwiie"
@@ -1793,6 +1923,59 @@ NEW COMPACT PAINT HEADER
             required
           />
           <button class="btn" type="submit">Join the list</button>
+        </form>
+      </section>
+
+      <!-- ============================ STORE ============================ -->
+      <section
+        class="store"
+        id="buy"
+        hidden
+        aria-labelledby="buy-label"
+        tabindex="-1"
+      >
+        <h2 class="section-label" id="buy-label">Take it home</h2>
+        <p class="section-note">
+          Thank you for being interested in the works. This is a direct contact
+          to the artist. Please enter your information below and we will respond
+          as soon as possible!
+        </p>
+
+        <form
+          class="signup"
+          action="https://forminit.com/f/48d0s9iwiie"
+          method="POST"
+        >
+          <!-- Filled by the script from the URL hash -->
+          <input
+            type="hidden"
+            id="buy-artwork-field"
+            name="fi-text-artwork"
+            value=""
+          />
+
+          <p class="buy-artwork">
+            artwork: <strong id="buy-artwork-name">&mdash;</strong>
+          </p>
+
+          <input
+            type="email"
+            id="buyer-email"
+            name="fi-sender-email"
+            autocomplete="email"
+            inputmode="email"
+            placeholder="your-email@example.com"
+          />
+
+          <textarea
+            id="buyer-message"
+            name="fi-text-message"
+            rows="4"
+            placeholder="Send a message to the artist..."
+          ></textarea>
+
+          <button class="btn" type="submit">send to the studio</button>
+          <a class="buy-close" href="#quiet-things">close</a>
         </form>
       </section>
     </main>
