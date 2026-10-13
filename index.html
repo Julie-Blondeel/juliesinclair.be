@@ -481,9 +481,9 @@
         margin: 0 auto;
         padding: 0;
 
-        width:min(900px, 88vw);
+        width: min(900px, 88vw);
         display: grid;
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
         gap: 24px;
       }
       .cards li {
@@ -582,7 +582,7 @@
         width: 100%;
         aspect-ratio: 3/4;
         height: auto;
-        border-radius:3px;
+        border-radius: 3px;
         overflow: hidden;
       }
 
@@ -595,7 +595,7 @@
         border-radius: 3px;
       }
 
-     /* .card[open] .painting {
+      /* .card[open] .painting {
         height: 200px;
       }*/
 
@@ -878,10 +878,10 @@
         margin-bottom: 0;
       }
 
-      .about-image{
+      .about-image {
         display: block;
-        width:100%;
-        aspect-ratio:4/5;
+        width: 100%;
+        aspect-ratio: 4/5;
         object-fit: cover;
         border-radius: 3px;
       }
@@ -969,12 +969,12 @@
    ============================================================ */
       @media (min-width: 700px) {
         .cards {
-          grid-template-columns: repeat(2,1fr);
+          grid-template-columns: repeat(2, 1fr);
         }
       }
       @media (min-width: 900px) {
         .cards {
-          grid-template-columns:repeat(3, 1fr);
+          grid-template-columns: repeat(3, 1fr);
         }
       }
 
@@ -1032,11 +1032,11 @@ NEW COMPACT PAINT HEADER
         width: 100%;
         min-height: 150px; /*this makes it much shorter*/
         padding: 22px 20px 44px;
-        display:flex;
-        align-items:center;
-        justify-content:center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         overflow: visible;
-        isolation:isolate;
+        isolation: isolate;
 
         background: linear-gradient(
           90deg,
@@ -1053,51 +1053,51 @@ NEW COMPACT PAINT HEADER
       /*soft irregular paint clouds*/
       .paint-band::before {
         content: "";
-        position:absolute;
+        position: absolute;
         inset: 0;
         z-index: 0;
         pointer-events: none;
 
         background:
-         radial-gradient(
-      ellipse 24% 72% at 10% 32%,
-      rgba(234, 145, 134, 0.70) 0%,
-      rgba(234, 145, 134, 0.28) 40%,
-      transparent 72%
-    ),
-    radial-gradient(
-      ellipse 22% 66% at 27% 18%,
-      rgba(105, 210, 234, 0.62) 0%,
-      rgba(105, 210, 234, 0.22) 44%,
-      transparent 74%
-    ),
-    radial-gradient(
-      ellipse 26% 76% at 46% 26%,
-      rgba(217, 212, 113, 0.66) 0%,
-      rgba(217, 212, 113, 0.26) 42%,
-      transparent 72%
-    ),
-    radial-gradient(
-      ellipse 24% 72% at 66% 18%,
-      rgba(239, 179, 209, 0.70) 0%,
-      rgba(239, 179, 209, 0.28) 38%,
-      transparent 70%
-    ),
-    radial-gradient(
-      ellipse 24% 74% at 86% 26%,
-      rgba(234, 145, 134, 0.66) 0%,
-      rgba(234, 145, 134, 0.25) 40%,
-      transparent 74%
-    ),
-    radial-gradient(
-      ellipse 28% 80% at 55% 70%,
-      rgba(255, 255, 255, 0.14) 0%,
-      rgba(255, 255, 255, 0.08) 28%,
-      transparent 60%
-    );
+          radial-gradient(
+            ellipse 24% 72% at 10% 32%,
+            rgba(234, 145, 134, 0.7) 0%,
+            rgba(234, 145, 134, 0.28) 40%,
+            transparent 72%
+          ),
+          radial-gradient(
+            ellipse 22% 66% at 27% 18%,
+            rgba(105, 210, 234, 0.62) 0%,
+            rgba(105, 210, 234, 0.22) 44%,
+            transparent 74%
+          ),
+          radial-gradient(
+            ellipse 26% 76% at 46% 26%,
+            rgba(217, 212, 113, 0.66) 0%,
+            rgba(217, 212, 113, 0.26) 42%,
+            transparent 72%
+          ),
+          radial-gradient(
+            ellipse 24% 72% at 66% 18%,
+            rgba(239, 179, 209, 0.7) 0%,
+            rgba(239, 179, 209, 0.28) 38%,
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 24% 74% at 86% 26%,
+            rgba(234, 145, 134, 0.66) 0%,
+            rgba(234, 145, 134, 0.25) 40%,
+            transparent 74%
+          ),
+          radial-gradient(
+            ellipse 28% 80% at 55% 70%,
+            rgba(255, 255, 255, 0.14) 0%,
+            rgba(255, 255, 255, 0.08) 28%,
+            transparent 60%
+          );
 
-        filter:blur(18px);
-        opacity:1;
+        filter: blur(18px);
+        opacity: 1;
       }
 
       /*Paint DRIPS*/
@@ -1107,16 +1107,15 @@ NEW COMPACT PAINT HEADER
         content: "";
         position: absolute;
         inset: 0;
-        z-index:1;
+        z-index: 1;
         pointer-events: none;
 
         background: linear-gradient(
           to bottom,
-          rgba(255, 255, 255, 0.18)0%,
-          rgba(255, 255, 255, 0.05)28%,
-          rgba(255, 255, 255, 0)50%
+          rgba(255, 255, 255, 0.18) 0%,
+          rgba(255, 255, 255, 0.05) 28%,
+          rgba(255, 255, 255, 0) 50%
         );
-       
       }
 
       /* --- raindrops falling from the band --------------------------
@@ -1177,53 +1176,53 @@ NEW COMPACT PAINT HEADER
       }
 
       .header-brand {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-}
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+      }
 
-.instagram-link {
-  display:inline-flex;
-  align-items: center;
-  justify-content:center;
-  gap:7px;
+      .instagram-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
 
-  color:var(--ink);
-  text-decoration: none;
+        color: var(--ink);
+        text-decoration: none;
 
-  font-family:var(--body-font);
-  font-size:0.88rem;
-  font-weight:600;
-  letter-spacing: 0.03em;
+        font-family: var(--body-font);
+        font-size: 0.88rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
 
-  opacity:1;
+        opacity: 1;
 
-  transition:
-    opacity 0.2s ease,
-    transform 0.2s ease;
-}
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease;
+      }
 
-.instagram-link:hover {
-  opacity: 1;
-  transform: translateY(-1px);
-}
+      .instagram-link:hover {
+        opacity: 1;
+        transform: translateY(-1px);
+      }
 
-.instagram-icon {
-  width: 18px;
-  height: 18px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-}
+      .instagram-icon {
+        width: 18px;
+        height: 18px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.8;
+      }
 
-.instagram-dot {
-  fill: currentColor;
-  stroke: none;
-}
+      .instagram-dot {
+        fill: currentColor;
+        stroke: none;
+      }
 
       /*small screens*/
 
@@ -1251,7 +1250,6 @@ NEW COMPACT PAINT HEADER
     <header class="site-header">
       <div class="header-inner">
         <div class="paint-band">
-
           <svg
             class="drip drip-1"
             viewBox="0 0 20 34"
@@ -1270,7 +1268,7 @@ NEW COMPACT PAINT HEADER
               opacity="0.4"
             />
           </svg>
-          
+
           <svg
             class="drip drip-2"
             viewBox="0 0 20 56"
@@ -1310,7 +1308,6 @@ NEW COMPACT PAINT HEADER
             />
           </svg>
           -->
-          
 
           <svg
             class="drip drip-4"
@@ -1350,52 +1347,32 @@ NEW COMPACT PAINT HEADER
           </svg>
 
           <div class="header-brand">
+            <img
+              class="header-logo"
+              src="images/julie-sinclair-logo.svg"
+              alt="Julie Sinclair logo with a cat"
+            />
 
-  <img
-    class="header-logo"
-    src="images/julie-sinclair-logo.svg"
-    alt="Julie Sinclair logo with a cat"
-  />
+            <a
+              class="instagram-link"
+              href="https://www.instagram.com/julie.sofia.sinclair/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram @julie.sofia.sinclair"
+            >
+              <svg
+                class="instagram-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
+                <circle cx="12" cy="12" r="4.2" />
+                <circle cx="17.5" cy="6.5" r="1" class="instagram-dot" />
+              </svg>
 
-  <a
-    class="instagram-link"
-    href="https://www.instagram.com/julie.sofia.sinclair/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Instagram @julie.sofia.sinclair"
-  >
-    <svg
-      class="instagram-icon"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-      <rect
-        x="3"
-        y="3"
-        width="18"
-        height="18"
-        rx="5"
-        ry="5"
-      />
-      <circle
-        cx="12"
-        cy="12"
-        r="4.2"
-      />
-      <circle
-        cx="17.5"
-        cy="6.5"
-        r="1"
-        class="instagram-dot"
-      />
-    </svg>
-
-    <span>@julie.sofia.sinclair</span>
-  </a>
-
-</div>
-
-
+              <span>@julie.sofia.sinclair</span>
+            </a>
+          </div>
         </div>
       </div>
     </header>
@@ -1413,445 +1390,341 @@ NEW COMPACT PAINT HEADER
       >
         <h2 class="section-label" id="things-label">Quiet things</h2>
         <p class="section-note">
-          a few small things from the studio &mdash; open one to see more information
+          a few small things from the studio &mdash; open one to see more
+          information
         </p>
 
         <ul class="cards">
-
           <!--Artwork 1-->
 
-
-         <li>
-  <details class="card">
-
-    <summary>
-      <span class="artwork">
-        <span class="frame">
-          <span class="mat">
-
-            <img
-              class="painting-image"
-              src="images/artwork-01.jpg"
-              alt="Title of artwork"
-            >
-
-          </span>
-        </span>
-      </span>
-
-      <span class="card-title">Where we touch</span>
-    </summary>
-
-
-    <div class="card-more">
-
-      <p class="card-desc">
-       Created on a quiet autumn evening, with rain at the window and blues in the room. 
-       In the silence, hearts beat louder and closer — in the anticipation of intimacy, 
-       where kindred souls touch 
-       like yellow leaves meeting the earth.
-      </p>
-
-      <p class="card-medium">
-        Original artwork · A3
-      </p>
-
-      <a
-        class="price-link"
-        href="#"
-      >
-        <span class="price-amount">€60</span> · take it home
-      </a>
-
-    </div>
-
-  </details>
-</li>
-
-<!--Artwork 2-->
-
-<li>
-  <details class="card">
-
-    <summary>
-      <span class="artwork">
-        <span class="frame">
-          <span class="mat">
-
-            <img
-              class="painting-image"
-              src="images/artwork-02.jpg"
-              alt="Title of artwork"
-            >
-
-          </span>
-        </span>
-      </span>
-
-      <span class="card-title">Still Blooming</span>
-    </summary>
-
-
-    <div class="card-more">
-
-      <p class="card-desc">
-        In the quiet after rain, the orchids keep their light.
-        Fragile, persistent, almost weightless - blooming where
-        silence has learned to breathe.
-      </p>
-
-      <p class="card-medium">
-        Original artwork · A3
-      </p>
-
-      <a
-        class="price-link"
-        href="#"
-      >
-        <span class="price-amount">€50</span> · take it home
-      </a>
-
-    </div>
- 
-
-  </details>
-</li>
-
-
-    <!--Artwork 3-->
-
-
-<li>
-  <details class="card">
-
-    <summary>
-      <span class="artwork">
-        <span class="frame">
-          <span class="mat">
-
-            <img
-              class="painting-image"
-              src="images/artwork-03.jpg"
-              alt="Where the Wild Ones Meet"
-            >
-
-          </span>
-        </span>
-      </span>
-
-      <span class="card-title">Where the Wild Once Meet</span>
-    </summary>
-
-
-    <div class="card-more">
-
-      <p class="card-desc">
-        In a place beyond maps, the wild ones gather without fear. 
-        Strangers for a moment, companions for a while — moving through colour,
-        shadow and the quiet mystery of being alive.
-      </p>
-
-      <p class="card-medium">
-        Original artwork · A3
-      </p>
-
-      <a
-        class="price-link"
-        href="#"
-      >
-        <span class="price-amount">€60</span> · take it home
-      </a>
-
-    </div>
-
-  </details>
-</li>
-
-<!--Artwork 4-->
-
-      <li>
-  <details class="card">
-
-    <summary>
-      <span class="artwork">
-        <span class="frame">
-          <span class="mat">
-
-            <img
-              class="painting-image"
-              src="images/artwork-04.jpg"
-              alt="Title of artwork"
-            >
-
-          </span>
-        </span>
-      </span>
-
-      <span class="card-title">The World Gives Enough</span>
-    </summary>
-
-
-    <div class="card-more">
-
-      <p class="card-desc">
-       There is abundance in the ordinary — fruit on the table, warmth in colour, 
-       small things gathered with care. 
-       The world can be generous when we remember how to notice.
-      </p>
-
-      <p class="card-medium">
-        Original artwork · A3
-      </p>
-
-      <a
-        class="price-link"
-        href="#"
-      >
-        <span class="price-amount">€55</span> · take it home
-      </a>
-
-    </div>
-
-  </details>
-</li>
-
-<!--Artwork 5-->
-
-<li>
-  <details class="card">
-
-    <summary>
-      <span class="artwork">
-        <span class="frame">
-          <span class="mat">
-
-            <img
-              class="painting-image"
-              src="images/artwork-05.jpg"
-              alt="Title of artwork"
-            >
-
-          </span>
-        </span>
-      </span>
-
-      <span class="card-title">When Legends Come Alive</span>
-    </summary>
-
-
-    <div class="card-more">
-
-      <p class="card-desc">
-       One autumn evening, while looking through photographs of Oudenaarde tapestries, 
-       I felt their world quietly enter my own. 
-       My studio filled with figures, whispers, and the soft rustle of another time —
-       as if old legends had awakened and chosen to stay.
-      </p>
-
-      <p class="card-medium">
-        Original artwork · A3
-      </p>
-
-      <a
-        class="price-link"
-        href="#"
-      >
-        <span class="price-amount">€65</span> · take it home
-      </a>
-
-    </div>
-
-  </details>
-</li>
-
-<!--Artwork 6-->
-
-<li>
-  <details class="card">
-
-    <summary>
-      <span class="artwork">
-        <span class="frame">
-          <span class="mat">
-
-            <img
-              class="painting-image"
-              src="images/artwork-06.jpg"
-              alt="Title of artwork"
-            >
-
-          </span>
-        </span>
-      </span>
-
-      <span class="card-title">Being Wild</span>
-    </summary>
-
-
-    <div class="card-more">
-
-      <p class="card-desc">
-        In this drawing, I followed my most instinctive and spontaneous nature — where ancient beauty meets the elemental force of the earth’s
-        earliest inhabitants. They carry the old secrets of our planet, awakening a sense of freedom, wildness, and something timeless within us.
-      </p>
-
-      <p class="card-medium">
-        Original artwork · A3
-      </p>
-
-      <a
-        class="price-link"
-        href="#"
-      >
-        <span class="price-amount">€55</span> · take it home
-      </a>
-
-    </div>
-
-  </details>
-</li>
-
-<!--Artwork 7-->
-
-<li>
-  <details class="card">
-
-    <summary>
-      <span class="artwork">
-        <span class="frame">
-          <span class="mat">
-
-            <img
-              class="painting-image"
-              src="images/artwork-07.jpg"
-              alt="Title of artwork"
-            >
-
-          </span>
-        </span>
-      </span>
-
-      <span class="card-title">Where the Current Carries Us</span>
-    </summary>
-
-
-    <div class="card-more">
-
-      <p class="card-desc">
-      Small lives moving through colour, instinct, and changing currents. They do not ask where the water leads - they simply follow,
-      bright and alive, trusting the flow.
-      </p>
-
-      <p class="card-medium">
-        Original artwork · A3
-      </p>
-
-      <a
-        class="price-link"
-        href="#"
-      >
-        <span class="price-amount">€55</span> · take it home
-      </a>
-
-    </div>
-
-  </details>
-</li>
-
-<!--Artwork 8-->
-
-<li>
-  <details class="card">
-
-    <summary>
-      <span class="artwork">
-        <span class="frame">
-          <span class="mat">
-
-            <img
-              class="painting-image"
-              src="images/artwork-08.jpg"
-              alt="Title of artwork"
-            >
-
-          </span>
-        </span>
-      </span>
-
-      <span class="card-title">Far Away and Close</span>
-    </summary>
-
-
-    <div class="card-more">
-
-      <p class="card-desc">
-       Made in the hospital, while I was longing for my cat Sonya and dreaming of coming back to her. 
-       That evening, the full moon and the stars looked in through my window. 
-       I thought of how they were like us — so far apart, and yet so tenderly close.
-      </p>
-
-      <p class="card-medium">
-        Original artwork · A3
-      </p>
-
-      <a
-        class="price-link"
-        href="#"
-      >
-        <span class="price-amount">€70</span> · take it home
-      </a>
-
-    </div>
-
-  </details>
-</li>
-
-<!--Artwork-9-->
-
-<li>
-  <details class="card">
-
-    <summary>
-      <span class="artwork">
-        <span class="frame">
-          <span class="mat">
-
-            <img
-              class="painting-image"
-              src="images/artwork-09.jpg"
-              alt="Title of artwork"
-            >
-
-          </span>
-        </span>
-      </span>
-
-      <span class="card-title">Threads Through Time</span>
-    </summary>
-
-
-    <div class="card-more">
-
-      <p class="card-desc">
-     Inspired by the tapestries of Oudenaarde, this painting imagines a space where the city’s present meets its history. 
-     Everyday life and old stories breathe side by side here, carrying life through time and across generations.
-      </p>
-
-      <p class="card-medium">
-        Original artwork · A3
-      </p>
-
-      <a
-        class="price-link"
-        href="#"
-      >
-        <span class="price-amount">€70</span> · take it home
-      </a>
-
-    </div>
-
-  </details>
-</li>
+          <li>
+            <details class="card">
+              <summary>
+                <span class="artwork">
+                  <span class="frame">
+                    <span class="mat">
+                      <img
+                        class="painting-image"
+                        src="images/artwork-01.jpg"
+                        alt="Title of artwork"
+                      />
+                    </span>
+                  </span>
+                </span>
+
+                <span class="card-title">Where we touch</span>
+              </summary>
+
+              <div class="card-more">
+                <p class="card-desc">
+                  Created on a quiet autumn evening, with rain at the window and
+                  blues in the room. In the silence, hearts beat louder and
+                  closer — in the anticipation of intimacy, where kindred souls
+                  touch like yellow leaves meeting the earth.
+                </p>
+
+                <p class="card-medium">Original artwork · A3</p>
+
+                <a class="price-link" href="#">
+                  <span class="price-amount">€60</span> · take it home
+                </a>
+              </div>
+            </details>
+          </li>
+
+          <!--Artwork 2-->
+
+          <li>
+            <details class="card">
+              <summary>
+                <span class="artwork">
+                  <span class="frame">
+                    <span class="mat">
+                      <img
+                        class="painting-image"
+                        src="images/artwork-02.jpg"
+                        alt="Title of artwork"
+                      />
+                    </span>
+                  </span>
+                </span>
+
+                <span class="card-title">Still Blooming</span>
+              </summary>
+
+              <div class="card-more">
+                <p class="card-desc">
+                  In the quiet after rain, the orchids keep their light.
+                  Fragile, persistent, almost weightless - blooming where
+                  silence has learned to breathe.
+                </p>
+
+                <p class="card-medium">Original artwork · A3</p>
+
+                <a class="price-link" href="#">
+                  <span class="price-amount">€50</span> · take it home
+                </a>
+              </div>
+            </details>
+          </li>
+
+          <!--Artwork 3-->
+
+          <li>
+            <details class="card">
+              <summary>
+                <span class="artwork">
+                  <span class="frame">
+                    <span class="mat">
+                      <img
+                        class="painting-image"
+                        src="images/artwork-03.jpg"
+                        alt="Where the Wild Ones Meet"
+                      />
+                    </span>
+                  </span>
+                </span>
+
+                <span class="card-title">Where the Wild Once Meet</span>
+              </summary>
+
+              <div class="card-more">
+                <p class="card-desc">
+                  In a place beyond maps, the wild ones gather without fear.
+                  Strangers for a moment, companions for a while — moving
+                  through colour, shadow and the quiet mystery of being alive.
+                </p>
+
+                <p class="card-medium">Original artwork · A3</p>
+
+                <a class="price-link" href="#">
+                  <span class="price-amount">€60</span> · take it home
+                </a>
+              </div>
+            </details>
+          </li>
+
+          <!--Artwork 4-->
+
+          <li>
+            <details class="card">
+              <summary>
+                <span class="artwork">
+                  <span class="frame">
+                    <span class="mat">
+                      <img
+                        class="painting-image"
+                        src="images/artwork-04.jpg"
+                        alt="Title of artwork"
+                      />
+                    </span>
+                  </span>
+                </span>
+
+                <span class="card-title">The World Gives Enough</span>
+              </summary>
+
+              <div class="card-more">
+                <p class="card-desc">
+                  There is abundance in the ordinary — fruit on the table,
+                  warmth in colour, small things gathered with care. The world
+                  can be generous when we remember how to notice.
+                </p>
+
+                <p class="card-medium">Original artwork · A3</p>
+
+                <a class="price-link" href="#">
+                  <span class="price-amount">€55</span> · take it home
+                </a>
+              </div>
+            </details>
+          </li>
+
+          <!--Artwork 5-->
+
+          <li>
+            <details class="card">
+              <summary>
+                <span class="artwork">
+                  <span class="frame">
+                    <span class="mat">
+                      <img
+                        class="painting-image"
+                        src="images/artwork-05.jpg"
+                        alt="Title of artwork"
+                      />
+                    </span>
+                  </span>
+                </span>
+
+                <span class="card-title">When Legends Come Alive</span>
+              </summary>
+
+              <div class="card-more">
+                <p class="card-desc">
+                  One autumn evening, while looking through photographs of
+                  Oudenaarde tapestries, I felt their world quietly enter my
+                  own. My studio filled with figures, whispers, and the soft
+                  rustle of another time — as if old legends had awakened and
+                  chosen to stay.
+                </p>
+
+                <p class="card-medium">Original artwork · A3</p>
+
+                <a class="price-link" href="#">
+                  <span class="price-amount">€65</span> · take it home
+                </a>
+              </div>
+            </details>
+          </li>
+
+          <!--Artwork 6-->
+
+          <li>
+            <details class="card">
+              <summary>
+                <span class="artwork">
+                  <span class="frame">
+                    <span class="mat">
+                      <img
+                        class="painting-image"
+                        src="images/artwork-06.jpg"
+                        alt="Title of artwork"
+                      />
+                    </span>
+                  </span>
+                </span>
+
+                <span class="card-title">Being Wild</span>
+              </summary>
+
+              <div class="card-more">
+                <p class="card-desc">
+                  In this drawing, I followed my most instinctive and
+                  spontaneous nature — where ancient beauty meets the elemental
+                  force of the earth’s earliest inhabitants. They carry the old
+                  secrets of our planet, awakening a sense of freedom, wildness,
+                  and something timeless within us.
+                </p>
+
+                <p class="card-medium">Original artwork · A3</p>
+
+                <a class="price-link" href="#">
+                  <span class="price-amount">€55</span> · take it home
+                </a>
+              </div>
+            </details>
+          </li>
+
+          <!--Artwork 7-->
+
+          <li>
+            <details class="card">
+              <summary>
+                <span class="artwork">
+                  <span class="frame">
+                    <span class="mat">
+                      <img
+                        class="painting-image"
+                        src="images/artwork-07.jpg"
+                        alt="Title of artwork"
+                      />
+                    </span>
+                  </span>
+                </span>
+
+                <span class="card-title">Where the Current Carries Us</span>
+              </summary>
+
+              <div class="card-more">
+                <p class="card-desc">
+                  Small lives moving through colour, instinct, and changing
+                  currents. They do not ask where the water leads - they simply
+                  follow, bright and alive, trusting the flow.
+                </p>
+
+                <p class="card-medium">Original artwork · A3</p>
+
+                <a class="price-link" href="#">
+                  <span class="price-amount">€55</span> · take it home
+                </a>
+              </div>
+            </details>
+          </li>
+
+          <!--Artwork 8-->
+
+          <li>
+            <details class="card">
+              <summary>
+                <span class="artwork">
+                  <span class="frame">
+                    <span class="mat">
+                      <img
+                        class="painting-image"
+                        src="images/artwork-08.jpg"
+                        alt="Title of artwork"
+                      />
+                    </span>
+                  </span>
+                </span>
+
+                <span class="card-title">Far Away and Close</span>
+              </summary>
+
+              <div class="card-more">
+                <p class="card-desc">
+                  Made in the hospital, while I was longing for my cat Sonya and
+                  dreaming of coming back to her. That evening, the full moon
+                  and the stars looked in through my window. I thought of how
+                  they were like us — so far apart, and yet so tenderly close.
+                </p>
+
+                <p class="card-medium">Original artwork · A3</p>
+
+                <a class="price-link" href="#">
+                  <span class="price-amount">€70</span> · take it home
+                </a>
+              </div>
+            </details>
+          </li>
+
+          <!--Artwork-9-->
+
+          <li>
+            <details class="card">
+              <summary>
+                <span class="artwork">
+                  <span class="frame">
+                    <span class="mat">
+                      <img
+                        class="painting-image"
+                        src="images/artwork-09.jpg"
+                        alt="Title of artwork"
+                      />
+                    </span>
+                  </span>
+                </span>
+
+                <span class="card-title">Threads Through Time</span>
+              </summary>
+
+              <div class="card-more">
+                <p class="card-desc">
+                  Inspired by the tapestries of Oudenaarde, this painting
+                  imagines a space where the city’s present meets its history.
+                  Everyday life and old stories breathe side by side here,
+                  carrying life through time and across generations.
+                </p>
+
+                <p class="card-medium">Original artwork · A3</p>
+
+                <a class="price-link" href="#">
+                  <span class="price-amount">€70</span> · take it home
+                </a>
+              </div>
+            </details>
+          </li>
         </ul>
       </section>
 
@@ -1860,53 +1733,67 @@ NEW COMPACT PAINT HEADER
         <h2 class="section-label" id="about-label">About me</h2>
 
         <div class="about-inner">
-        
           <figure class="about-photo">
-            <img class="about-image"
-            src="images/julie-photo.jpg"
-            alt="Julie Sinclair">
+            <img
+              class="about-image"
+              src="images/julie-photo.jpg"
+              alt="Julie Sinclair"
+            />
             <figcaption>My colorful world</figcaption>
           </figure>
 
           <div class="about-text">
             <p>
-              I draw to understand the world and to create my own reality. For me it is the language through which i express my feelings, thoughts, and experiences. 
-              My practice is rooted in spontaneity and improvisation. I work without a predetermined plan, allowing images to emerge in the moment. 
-              I choose colours intuitively, often in relation to music - when sounds turn into a feeling of colour. 
-              For me, drawing is a way of living: a way of listening to myself, exploring the world around me, and communicating through images.
+              I draw to understand the world and to create my own reality. For
+              me it is the language through which i express my feelings,
+              thoughts, and experiences. My practice is rooted in spontaneity
+              and improvisation. I work without a predetermined plan, allowing
+              images to emerge in the moment. I choose colours intuitively,
+              often in relation to music - when sounds turn into a feeling of
+              colour. For me, drawing is a way of living: a way of listening to
+              myself, exploring the world around me, and communicating through
+              images.
             </p>
             <p>
-             I graduated from KASK School of Arts in Ghent with a Bachelor's degree in Illustration in 2025, followed by a Master's degree in Graphic Design in 2026. 
-             My creative background also extends into fashion and computer programming, which allows me to move freely between traditional drawing,
-             design, digital media and interactive projects. I believe that even a small step can bring us closer to a big dream.
+              I graduated from KASK School of Arts in Ghent with a Bachelor's
+              degree in Illustration in 2025, followed by a Master's degree in
+              Graphic Design in 2026. My creative background also extends into
+              fashion and computer programming, which allows me to move freely
+              between traditional drawing, design, digital media and interactive
+              projects. I believe that even a small step can bring us closer to
+              a big dream.
             </p>
           </div>
         </div>
       </section>
 
       <!-- ============================ NEWSLETTER ============================ -->
-          <h2 class="section-label" id="letters-label">
-        Letters from the studio
-    </h2>
-    <p class="section-note">
-        soft and kind letters &mdash; new paintings, no noise
-    </p>
-    <form class="signup" action="https://forminit.com/f/48d0s9iwiie" method="POST">
+      <section class="newsletter" aria-labelledby="letters-label">
+        <h2 class="section-label" id="letters-label">
+          Letters from the studio
+        </h2>
+        <p class="section-note">
+          soft and kind letters &mdash; new paintings, no noise
+        </p>
 
-        <label class="visually-hidden" for="email">Email address</label>
-        <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="your@email.com"
-        autocomplete="email"
-        inputmode="email"
-        required
-        />
-        <button class="btn" type="submit">Join the list</button>
-    </form>
-
-      
+        <!-- Point this form at your mailing-list provider's endpoint. -->
+        <form
+          class="signup"
+          action="https://forminit.com/f/48d0s9iwiie"
+          method="POST"
+        >
+          <label class="visually-hidden" for="email">Email address</label>
+          <input
+            type="email"
+            id="email"
+            name="fi-sender-email"
+            placeholder="your@email.com"
+            autocomplete="email"
+            inputmode="email"
+            required
+          />
+          <button class="btn" type="submit">Join the list</button>
+        </form>
       </section>
     </main>
 
